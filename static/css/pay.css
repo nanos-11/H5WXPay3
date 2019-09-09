@@ -1,0 +1,461 @@
+.pay-page {
+  width: 100%;
+  height: 100%
+}
+
+.pay-page .pay-scroll {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: .98rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch
+}
+
+.pay-page .pay-scroll .virtual {
+  width: 100%;
+  height: 2rem;
+  display: flex
+}
+
+.pay-page .pay-scroll .virtual .rest {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+
+.pay-page .pay-scroll .virtual .rest .rest-content {
+  font-family: PingFangSC-Medium;
+  font-size: .42rem;
+  color: #ff714c
+}
+
+.pay-page .pay-scroll .virtual .rest .rest-txt {
+  font-size: .24rem;
+  color: #424242;
+  line-height: .42rem
+}
+
+.pay-page .pay-scroll .gap {
+  width: 100%;
+  height: .2rem;
+  background: #f9faff
+}
+
+.pay-page .pay-scroll .verify-tel {
+  width: 100%;
+  padding-bottom: .2rem
+}
+
+.pay-page .pay-scroll .verify-tel .verify-title {
+  font-size: .28rem;
+  color: #606163;
+  line-height: .4rem;
+  margin-top: .4rem;
+  margin-left: .32rem
+}
+
+.pay-page .pay-scroll .verify-tel .tel-space {
+  box-sizing: border-box;
+  width: 6.66rem;
+  height: .8rem;
+  border-radius: .4rem;
+  border: .02rem solid #dee8ef;
+  margin: .4rem auto 0;
+  display: flex;
+  overflow: hidden
+}
+
+.pay-page .pay-scroll .verify-tel .tel-space .tel-icon {
+  width: .3rem;
+  height: .4rem;
+  margin: auto .24rem auto .33rem;
+  flex: none
+}
+
+.pay-page .pay-scroll .verify-tel .tel-space .tel-icon img {
+  width: 100%;
+  height: 100%
+}
+
+.pay-page .pay-scroll .verify-tel .tel-space input {
+  width: 5.99rem;
+  outline: none;
+  border: 0
+}
+
+.pay-page .pay-scroll .verify-tel .tel-space input::-webkit-input-placeholder {
+  color: #bfc0c2
+}
+
+.pay-page .pay-scroll .verify-tel .tel-space input:focus {
+  outline: none;
+  border: 0
+}
+
+.pay-page .pay-scroll .verify-tel .code-space {
+  width: 6.66rem;
+  height: .8rem;
+  display: flex;
+  justify-content: space-between;
+  margin: .24rem auto 0
+}
+
+.pay-page .pay-scroll .verify-tel .code-space .input-space {
+  box-sizing: border-box;
+  width: 4.41rem;
+  height: .8rem;
+  border-radius: .4rem;
+  border: .02rem solid #dee8ef;
+  display: flex;
+  overflow: hidden
+}
+
+.pay-page .pay-scroll .verify-tel .code-space .input-space .code-icon {
+  width: .32rem;
+  height: .35rem;
+  margin: auto .23rem auto .32rem;
+  flex: none
+}
+
+.pay-page .pay-scroll .verify-tel .code-space .input-space .code-icon img {
+  width: 100%;
+  height: 100%
+}
+
+.pay-page .pay-scroll .verify-tel .code-space .input-space input {
+  width: 3.54rem;
+  outline: none;
+  border: 0
+}
+
+.pay-page .pay-scroll .verify-tel .code-space .input-space input::-webkit-input-placeholder {
+  color: #bfc0c2
+}
+
+.pay-page .pay-scroll .verify-tel .code-space .input-space input:focus {
+  outline: none;
+  border: 0
+}
+
+.pay-page .pay-scroll .verify-tel .code-space .tiktok {
+  background: #459bf2;
+  color: #fff
+}
+
+.pay-page .pay-scroll .verify-tel .code-space .tiktok, .pay-page .pay-scroll .verify-tel .code-space .tiktok1 {
+  width: 2.2rem;
+  height: .8rem;
+  border-radius: .4rem;
+  text-align: center;
+  line-height: .8rem;
+  margin-left: .25rem;
+  font-family: PingFangSC-Medium;
+  font-size: .26rem
+}
+
+.pay-page .pay-scroll .verify-tel .code-space .tiktok1 {
+  background: #f4f5fd;
+  color: #606163
+}
+
+.pay-page .pay-scroll .course-info {
+  width: 100%;
+  position: relative;
+  border: .01rem solid transparent
+}
+
+.pay-page .pay-scroll .course-info .course-title {
+  font-size: .28rem;
+  color: #606163;
+  line-height: .4rem;
+  margin-top: .4rem;
+  margin-left: .32rem
+}
+
+.pay-page .pay-scroll .course-info .course-desc {
+  font-family: PingFangSC-Medium;
+  font-size: .34rem;
+  color: #424242;
+  line-height: .48rem;
+  margin: .38rem 1rem 0 .32rem
+}
+
+.pay-page .pay-scroll .course-info .course-price {
+  font-family: PingFangSC-Semibold;
+  color: #ff6536;
+  position: absolute;
+  top: 1.2rem;
+  right: .32rem;
+  display: flex
+}
+
+.pay-page .pay-scroll .course-info .course-price .money-icon {
+  font-size: .3rem;
+  margin-top: .03rem
+}
+
+.pay-page .pay-scroll .course-info .course-price .money {
+  font-size: .34rem
+}
+
+.pay-page .pay-scroll .course-info .line {
+  width: 6.86rem;
+  height: .01rem;
+  background: #dee8ef;
+  margin: .2rem auto 0
+}
+
+.pay-page .pay-scroll .course-info .extra {
+  margin-top: .6rem;
+  padding-bottom: .2rem;
+  color: #919294;
+  font-size: .26rem;
+
+}
+
+.pay-page .pay-scroll .course-info .extra img {
+  width: 100%;
+  height: 100%;
+}
+
+.pay-page .pay-scroll .gift-space {
+  width: 100%
+}
+
+.pay-page .pay-scroll .gift-space .gift-title {
+  font-size: .28rem;
+  color: #606163;
+  line-height: .4rem;
+  margin-top: .4rem;
+  margin-left: .32rem
+}
+
+.pay-page .pay-scroll .gift-space .gift-content {
+  width: 6.86rem;
+  box-sizing: border-box;
+  width: 100%;
+  padding: .08rem .32rem .4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center
+}
+
+.pay-page .pay-scroll .gift-space .gift-content .gift-item {
+  width: 3.3rem;
+  height: 3.86rem;
+  margin-top: .32rem
+}
+
+.pay-page .pay-scroll .gift-space .gift-content .gift-item .gift-img {
+  width: 3.3rem;
+  height: 3.3rem;
+  background: #f4f5fd;
+  border: 0
+}
+
+.pay-page .pay-scroll .gift-space .gift-content .gift-item .gift-img img {
+  width: 100%;
+  height: 100%;
+  display: block
+}
+
+.pay-page .pay-scroll .gift-space .gift-content .gift-item .gift-txt {
+  font-size: .28rem;
+  color: #606163;
+  line-height: .4rem;
+  margin-top: .16rem
+}
+
+.pay-page .pay-scroll .pay-space {
+  width: 100%
+}
+
+.pay-page .pay-scroll .pay-space .pay-title {
+  font-size: .28rem;
+  color: #606163;
+  line-height: .4rem;
+  margin-top: .4rem;
+  margin-left: .32rem
+}
+
+.pay-page .pay-scroll .pay-space .pay-item {
+  width: 100%;
+  height: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.pay-page .pay-scroll .pay-space .pay-item .pay-way {
+  height: .5rem;
+  display: flex;
+  align-items: center;
+  margin-left: .32rem
+}
+
+.pay-page .pay-scroll .pay-space .pay-item .pay-way .pay-icon {
+  width: .5rem;
+  height: .5rem
+}
+
+.pay-page .pay-scroll .pay-space .pay-item .pay-way .pay-icon img {
+  width: 100%;
+  height: 100%
+}
+
+.pay-page .pay-scroll .pay-space .pay-item .pay-way .pay-way-txt {
+  font-size: .32rem;
+  color: #606163;
+  margin-left: .16rem
+}
+
+.pay-page .pay-scroll .pay-space .pay-item .select-space {
+  width: .42rem;
+  height: .42rem;
+  margin-right: .32rem
+}
+
+.pay-page .pay-scroll .pay-space .pay-item .select-space img {
+  width: 100%;
+  height: 100%;
+  display: block
+}
+
+.pay-page .pay-scroll .pay-space .line {
+  width: 6.86rem;
+  height: .01rem;
+  background: #dee8ef;
+  margin: 0 auto
+}
+
+.pay-page .pay-btn {
+  position: fixed;
+  background: #fff;
+  width: 100%;
+  height: .98rem;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+
+.pay-page .pay-btn .pay-left {
+  width: 4.3rem;
+  height: .98rem;
+  border-top: .01rem solid rgba(58, 84, 108, .1)
+}
+
+.pay-page .pay-btn .pay-left .money-space {
+  font-family: PingFangSC-Semibold;
+  line-height: .42rem;
+  color: #ff6536;
+  display: flex;
+  margin-left: .32rem;
+  margin-top: .28rem
+}
+
+.pay-page .pay-btn .pay-left .money-space .money-icon {
+  font-size: .3rem;
+  margin-top: .05rem
+}
+
+.pay-page .pay-btn .pay-left .money-space .money {
+  font-size: .5rem;
+}
+
+.pay-page .pay-btn .pay-right {
+  width: 3.2rem;
+  height: .98rem;
+  background: #f97171;
+  font-family: PingFangSC-Medium;
+  color: #fff;
+  text-align: center;
+  line-height: .98rem;
+  font-size: .38rem
+}
+
+.pay-page .tel-pop {
+  position: absolute;
+  width: 100%;
+  background: rgba(0, 0, 0, .3);
+  top: 0;
+  bottom: 0
+}
+
+.pay-page .tel-pop .pop-container {
+  width: 5.61rem;
+  height: 3.57rem;
+  background: #fff;
+  border-radius: .5rem;
+  margin: 3.61rem auto 0
+}
+
+.pay-page .tel-pop .pop-container .pop-txt1 {
+  width: 4.6rem;
+  font-size: .3rem;
+  color: #7a8299;
+  line-height: .42rem;
+  text-align: center;
+  padding-top: .75rem;
+  margin: 0 auto
+}
+
+.pay-page .tel-pop .pop-container .pop-txt2 {
+  width: 100%;
+  font-size: .48rem;
+  color: #474f66;
+  text-align: center;
+  line-height: .67rem;
+  margin-top: .32rem
+}
+
+.pay-page .tel-pop .pop-container .pop-btn {
+  width: 4.8rem;
+  height: .8rem;
+  margin: .65rem auto 0;
+  display: flex;
+  justify-content: center
+}
+
+.pay-page .tel-pop .pop-container .pop-btn .pop-cancel {
+  width: 2.2rem;
+  height: .8rem;
+  box-sizing: border-box;
+  border-radius: .4rem;
+  border: .02rem solid #b8bdcc;
+  font-size: .3rem;
+  color: #b8bdcc;
+  text-align: center;
+  line-height: .8rem
+}
+
+.pay-page .tel-pop .pop-container .pop-btn .pop-sure {
+  width: 2.2rem;
+  height: .8rem;
+  box-sizing: border-box;
+  border-radius: .4rem;
+  background: #459bf2;
+  font-size: .3rem;
+  color: #fff;
+  text-align: center;
+  line-height: .8rem
+}
+
+.pay-page .tel-pop .pop-container .pop-btn .pop-sure a {
+  text-decoration: none;
+  color: #fff
+}
+
+.pay-page .captcha-img {
+  width: 2rem;
+  border-radius: .2rem;
+  cursor: pointer
+}

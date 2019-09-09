@@ -1,0 +1,134 @@
+.linebox{
+    width: 100%;
+    height: 40rem;
+    margin: 0 auto;
+    /*border: 1px solid;*/
+}
+.linebox .linebox-ul{
+    width: 95%;
+    height: 37rem;
+    margin: 0  auto;
+}
+.linebox .linebox-ul .linebox-li{
+    float: left;
+    height: 7rem;
+    box-shadow: 0rem 0rem .3rem #dbe6f8;
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: .3rem;
+    position: relative;
+}
+.linebox .linebox-ul .linebox-li .linefont{
+    width:90%;
+    height: 2rem;
+    /*border: 1px solid;*/
+    font-size: 1.5rem;
+    color: #999999;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+.linebox .linebox-ul .linebox-li .lineul{
+    width: 93%;
+    height:auto;
+    float: left;
+    /*border: 1px solid;*/
+    margin-top: .5rem;
+    margin-left: 1rem;
+    text-align: center;
+}
+.linebox .linebox-ul .linebox-li .lineul label{
+    width: 31%;
+    height: 2.2rem;
+    /*border: 1px solid;*/
+    float: left;
+    /*box-shadow: 0rem 0rem .1rem #666666;*/
+    margin-left: .5rem;
+    border-radius: .3rem;
+    margin-top: .5rem;
+    text-align: center;
+    line-height: 2.2rem;
+}
+.linebox .linebox-ul .linebox-li .lineul span{
+    width: 6rem;
+    height: 2.2rem;
+    /*border: 1px solid;*/
+    float: left;
+    font-size: 1.2rem;
+    text-align: left;line-height: 2.2rem;
+}
+.linebox .linebox-ul .linebox-li .lineul input{
+    width: 2rem;
+    height: 2rem;
+    float: left;
+}
+/*.linebox .linebox-ul .linebox-li .lineul input:hover{*/
+/*background: #b0cdf9;*/
+/*border: none;*/
+/*}*/
+.linebox .linebox-ul .linebox-li .ipt1{
+    /*box-shadow: 0rem 0rem .3rem #55c1f7;*/
+    width: 80%;
+    height: 2rem;
+    padding: .5rem;
+    /*outline: none;*/
+    /*color:transparent;*/
+    text-shadow:0 0 0 #000;
+    /*border:none;*/
+    border: 1px solid #999999;
+    border-radius: 100rem;margin: .5rem auto;
+    font-size: 1rem;
+    margin-left: 2.5rem;
+    margin-top: .5rem;
+    text-align: center;
+}
+.linebox .linebox-ul .linebox-li .imgbrn{
+    width: 2rem;
+    height: 2rem;
+    /*border: 1px solid;*/
+    margin-top: 1rem;
+    margin-left: 4rem;
+    display: inline-block;
+    position: absolute;
+}
+.linebox .linebox-ul .linebox-li .imgbrn img{
+    width: 86%;
+    height: 100%;
+}
+.linebox .lineboxbtn{
+    background: #5a8fc7;
+    width:20rem;
+    height:2.5rem;
+    /*border-right: 2px solid rgba(52, 94, 113, 0.2);*/
+    border-radius: 3rem;
+    font-size: 1.2rem;
+    color: white;
+    line-height: 2.5rem;
+    text-align: center;
+    margin: 1rem auto;
+    cursor: pointer;
+
+}
+.lineboxbtnsss{
+    width: 75%;
+    height: 4rem;
+    border-radius: 10rem;
+    margin: 1.5rem auto;
+    text-align: center;
+    line-height: 4rem;
+    margin-left: 3.8rem;
+    background: white;
+    color: #ee2828;
+    cursor: pointer;
+    font-size: 1.5rem;
+    box-shadow: 0rem 0rem .4rem #f9d4d0;
+}
+
+
+
+
+
+
+
+
+

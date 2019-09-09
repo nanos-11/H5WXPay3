@@ -1,0 +1,17 @@
+//宽高
+@mixin wh($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin fullScreen {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+@mixin jc {
+    margin: 0 auto;
+}
