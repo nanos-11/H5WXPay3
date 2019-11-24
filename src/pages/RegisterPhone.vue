@@ -3,8 +3,8 @@
     <div class="pay-scroll">
       <div class="virtual">
         <div class="rest">
-          <div class="rest-content">50人</div>
-          <div class="rest-txt">VIP社群剩余名额</div>
+          <div class="rest-content">28人</div>
+          <div class="rest-txt">班级剩余名额</div>
         </div>
         <div class="rest">
           <div class="rest-content">
@@ -35,15 +35,15 @@
       </div>
       <div class="gap"></div>
       <div class="course-info">
-        <div class="course-title">课程信息</div>
+        <!--<div class="course-title">课程信息</div>
         <div class="course-desc">21天亲子沟通训练营 (理论基础+育儿技巧+真实案例)</div>
         <div class="course-price">
           <div class="money-icon">￥</div>
           <div class="money">9.9</div>
         </div>
-        <div class="line"></div>
+        <div class="line"></div>-->
         <div class="extra">
-          <img src="../../static/images/kebiao.jpg" alt="" width="100%">
+          <img src="../../static/images/coures_details.jpg" alt="" width="100%">
         </div>
       </div>
     </div>
@@ -51,7 +51,7 @@
       <div class="pay-left">
         <div class="money-space">
           <div class="money-icon">￥</div>
-          <div class="money">9.9</div>
+          <div class="money">49</div>
         </div>
       </div>
       <button class="pay-right" @click="loginPhone" :disabled="isPay">{{isPayMessage}}</button>
@@ -134,7 +134,7 @@
         isAndroid: false,
         isIOS: false,
         wxCode: '',
-        minutes: 30,
+        minutes: 10,
         seconds: 0,
         address: '',//地址
         message: '',  //提示信息
