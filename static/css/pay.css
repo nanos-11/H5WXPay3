@@ -206,12 +206,12 @@
 .pay-page .pay-scroll .course-info .line {
   width: 6.86rem;
   height: .01rem;
-  background: #dee8ef;
+  background: #000000;
   margin: .2rem auto 0
 }
 
 .pay-page .pay-scroll .course-info .extra {
-  margin-top: .6rem;
+  /*margin-top: .6rem;*/
   padding-bottom: .2rem;
   color: #919294;
   font-size: .26rem;

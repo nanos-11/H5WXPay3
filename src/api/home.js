@@ -9,6 +9,7 @@ let config = {
  * 是否支付成功
  *
  * @date 2019/7/1
+ * course_id:  1--->9.9 2--->8.9 3--->49
  * @author nan
  */
 export function isPay(phone, course_id) {
@@ -62,6 +63,19 @@ export function getPhoneData(phone, seaName) {
     url: 'https://api.luboedu.cn/1.0/Onlinequestion/tanglang?' + qs.stringify(params)
   })
 }
+export function getPhoneData2(phone, seaName) {
+  let params = []
+  params.phone = phone
+  params.courseName = '愈见'
+  params.buName = '北京事业部'
+  params.sourceType = '信息流事业部合作_心谕者社群军团_心理训练营_广点通_信息流_广点通2_全国'
+  params.seaName = seaName
+  params.adName = "广点通"
+  return request({
+    method: 'get',
+    url: 'https://api.luboedu.cn/1.0/Onlinequestion/tanglang?' + qs.stringify(params)
+  })
+}
 
 /**
  * 登录/注册
@@ -88,7 +102,7 @@ export function createAliPay(data) {
   // console.log('nan 绑定订单请求的地址：', 'http://192.168.0.251:88/Marketingcourse/Nineyuan/createAliPay', data)
   return request({
     method: 'post',
-    url: config.baseURL + 'Marketingcourse/Nineyuan/createAliPay',
+    url: config.baseURL + 'Marketingcourse/Nineyuan/createAliPay2',
     data: data
   })
 }
@@ -102,7 +116,35 @@ export function createAliPay(data) {
 export function createWXPay(data) {
   return request({
     method: 'post',
-    url: config.baseURL + 'Marketingcourse/Nineyuan/wxPay',
+    url: config.baseURL + 'Marketingcourse/Nineyuan/wxPay3',
     data: data
   })
 }
+
+/**
+ * 创建微信支付
+ *
+ * @date 2019/9/7
+ * @author nan
+ */
+export function createWXPay2(data) {
+  return request({
+    method: 'post',
+    url: config.baseURL + 'Marketingcourse/Nineyuan/wxPay2',
+    data: data
+  })
+}
+
+/**
+ * 获取用户是否支付
+ *
+ * @date 2019/9/22
+ * @author nan
+ */
+export function getUserIsPay(data) {
+  return request({
+    method: 'get',
+    url: config.baseURL + 'Marketingcourse/Nineyuan/getOpenId?code=' + data.code
+  })
+}
+

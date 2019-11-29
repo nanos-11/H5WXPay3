@@ -1,6 +1,6 @@
 # h5pay
 
- GitHub h5 Î¢ÐÅÖ§¸¶> A Vue.js project
+ GitHub h5  A Vue.js project
 
 ## Build Setup
 

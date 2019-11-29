@@ -71,7 +71,7 @@
 
 <script>
   import "../../static/js/cover.min.js"
-  import {isPay, getBindVerCode, loginPhone, createAliPay, getPhoneData, createWXPay} from "../api/home";
+  import {isPay, getBindVerCode, loginPhone, createAliPay, getPhoneData2, createWXPay} from "../api/home";
   
   /**
    * 验证手机号是否正确
@@ -136,7 +136,7 @@
   }
   
   export default {
-    name: "RegisterPhone",
+    name: "RegisterPhone2",
     data() {
       return {
         wxCode: '',
@@ -312,7 +312,7 @@
           }
         })
         // 获取手机号给螳螂
-        getPhoneData(this.phone, this.address).then(res => {
+        getPhoneData2(this.phone, this.address).then(res => {
         })
       },
       /**
@@ -419,7 +419,7 @@
           // console.log('nan startWxPay local 4', local)
           // 如果没有code 或 openId，则去请求
           if (!this.wxCode && !openId) {
-            let url = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhone?type=' + this.type
+            let url = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhone2?type=' + this.type
             window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='
               + appid + '&redirect_uri=' + encodeURIComponent(local) + '&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
             

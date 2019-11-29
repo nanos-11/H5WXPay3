@@ -1,10 +1,13 @@
 <template>
   <div>
+    <div class="line code">
+      添加微信号或长按保存下方二维码添加您的学习专属班
+    </div>
     <div class="box">
-      <img src="../../static/images/erweima.png" alt="">
+      <img src="../../static/images/coder3.png" alt="">
     </div>
     <div class="line">
-      微信号：lubojiaoyu007
+      微信号：18515028309
     </div>
   </div>
 </template>
@@ -25,7 +28,7 @@
 
 <style scoped>
   .box {
-    width: 100%;
+    width: 60%;
     height: auto;
     margin: 0 auto
   }
@@ -37,9 +40,14 @@
   
   .line {
     width: 100%;
-    height: 3rem;
-    line-height: 1rem;
+    /*height: 3rem;*/
+    line-height: 0.8rem;
     text-align: center;
     font-size: 0.4rem;
+  }
+  
+  .code {
+    padding: 0 0.5rem;
+    margin-top: 1rem;
   }
 </style>
