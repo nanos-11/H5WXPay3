@@ -63,6 +63,20 @@ export function getPhoneData(phone, seaName) {
     url: 'https://api.luboedu.cn/1.0/Onlinequestion/tanglang?' + qs.stringify(params)
   })
 }
+export function getPhoneDataPC(phone, seaName) {
+  let params = []
+  params.phone = phone
+  params.courseName = '愈见'
+  params.buName = '信息流事业部(合作)'
+  params.sourceType = '信息流事业部合作_心谕者社群军团_心理训练营_360_信息流_360_全国'
+  params.seaName = seaName
+  params.adName = "360"
+  return request({
+    method: 'get',
+    url: 'https://api.luboedu.cn/1.0/Onlinequestion/tanglang?' + qs.stringify(params)
+  })
+}
+
 export function getPhoneData2(phone, seaName) {
   let params = []
   params.phone = phone
@@ -99,11 +113,12 @@ export function loginPhone(phone, code, course_id) {
  * @param data'price', 'out_trade_no', 'subject', 'quitUrl'
  */
 export function createAliPay(data) {
+  console.log('nan createAliPay', data)
   // console.log('nan 绑定订单请求的地址：', 'http://192.168.0.251:88/Marketingcourse/Nineyuan/createAliPay', data)
   return request({
-    method: 'post',
-    url: config.baseURL + 'Marketingcourse/Nineyuan/createAliPay2',
-    data: data
+    method: 'get',
+    url: config.baseURL + 'Marketingcourse/Nineyuan/createAliPay2?phone='
+      + data.phone + '&subject=' + data.subject + '&course_id=' + data.course_id + '&status=' + data.status,
   })
 }
 

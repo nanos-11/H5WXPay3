@@ -218,7 +218,7 @@
     created() {
       this.type = decodeURIComponent(this.$route.query.type);
       if (this.type === '2') {
-        this.price = 199
+        this.price = 2099
       }
       localStorage.setItem('price', this.price);
       
@@ -353,7 +353,6 @@
        * @author nan
        */
       startAliPay() {
-        // meteor.track('form', {convert_id: 1643737926516749})
         // 调起支付 true.微信 false.支付宝
         if (this.radio === '1') {
           this.startWxPay()

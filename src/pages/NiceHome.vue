@@ -22,7 +22,7 @@
           <div>元</div>
         </div>
       </div>
-      <div class="banner"><img src="../../static/images/banner.jpg" alt="" width="100%"></div>
+      <div class="banner"><img src="../../static/images/banner.png" alt="" width="100%"></div>
     </section>
     <section class="page2" onclick="mantis.requestChat()">
       <img src="../../static/images/wenti.jpg" alt="" width="100%">

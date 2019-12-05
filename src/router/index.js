@@ -3,9 +3,12 @@ import Router from 'vue-router'
 import App from '../App.vue'
 import Home from '../pages/Home.vue'
 import Home2 from '../pages/Home2.vue'
+import HomePC from '../pages/HomePC.vue'
 import RegisterPhone from '../pages/RegisterPhone.vue'
 import RegisterPhone2 from '../pages/RegisterPhone2.vue'
+import PayPc from '../pages/PayPC.vue'
 import Coder from '../pages/code.vue'
+import CodePC from '../pages/CodePC.vue'
 import NiceCode from '../pages/NiceCode.vue'
 import NiceHome from '../pages/NiceHome.vue'
 
@@ -40,6 +43,16 @@ export default new Router({
           component: RegisterPhone2
         },
         {
+          name: 'homePC',
+          path: '/homePC',
+          component: HomePC
+        },
+        {
+          name: 'payPc',
+          path: '/payPc',
+          component: PayPc
+        },
+        {
           name: 'coder',
           path: '/coder',
           component: Coder
@@ -53,6 +66,11 @@ export default new Router({
           name: 'nicecode',
           path: '/nicecode',
           component: NiceCode
+        },
+        {
+          name: 'codePC',
+          path: '/codePC',
+          component: CodePC
         }
       ]
     }

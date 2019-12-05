@@ -218,7 +218,7 @@
     created() {
       this.type = decodeURIComponent(this.$route.query.type);
       if (this.type === '2') {
-        this.price = 199
+        this.price = 2099
       }
       localStorage.setItem('price', this.price);
       
@@ -314,6 +314,13 @@
         // 获取手机号给螳螂
         getPhoneData(this.phone, this.address).then(res => {
         })
+        
+        if (this.type === '2') {
+          // 2099
+          meteor.track('form', {convert_id: 1651889116605448})
+        } else {
+          meteor.track('form', {convert_id: 1651889015433227})
+        }
       },
       /**
        * 根据手机号登录或者注册
@@ -353,7 +360,6 @@
        * @author nan
        */
       startAliPay() {
-        // meteor.track('form', {convert_id: 1643737926516749})
         // 调起支付 true.微信 false.支付宝
         if (this.radio === '1') {
           this.startWxPay()
