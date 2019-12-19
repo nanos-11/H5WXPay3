@@ -218,7 +218,7 @@
     created() {
       this.type = decodeURIComponent(this.$route.query.type);
       if (this.type === '2') {
-        this.price = 2099
+        this.price = 699
       }
       localStorage.setItem('price', this.price);
       
@@ -316,7 +316,7 @@
         })
         
         if (this.type === '2') {
-          // 2099
+          // 699
           meteor.track('form', {convert_id: 1651889116605448})
         } else {
           meteor.track('form', {convert_id: 1651889015433227})

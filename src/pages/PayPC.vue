@@ -29,7 +29,7 @@
       </div>
       <div class="amountbox">
         <div class="amountbox_left" @click="payOrder(2)" style="cursor:pointer">
-          <div class="font1">¥2099</div>
+          <div class="font1">¥699</div>
           <div class="font2">原价购买</div>
         </div>
         <div class="amountbox_right" @click="payOrder(1)" style="cursor:pointer">
@@ -189,16 +189,16 @@
     created() {
       this.type = this.$route.params.type;
       this.getAddress()
-      this.payPrice = this.type === 1 ? 49 : 2099
+      this.payPrice = this.type === 1 ? 49 : 699
     },
     mounted() {
       this.setStyle(this.type)
     },
     methods: {
       payOrder(type) {
-        // 1->49 2->2099
+        // 1->49 2->699
         this.type = type
-        this.payPrice = type === 1 ? 49 : 2099
+        this.payPrice = type === 1 ? 49 : 699
         this.setStyle(type)
       },
       // 设置样式

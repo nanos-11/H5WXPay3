@@ -34,7 +34,7 @@
       <div id="ly" style="position: fixed; bottom: 0px; display: block;">
         <div style="width: 1000px;margin: 0 auto">
           <div class="ly_left">
-            <div class="font1">¥2099</div>
+            <div class="font1">¥699</div>
             <div class="font2" @click="intentRegister(2)">原价购买</div>
           </div>
           <div class="ly_right">

@@ -3,9 +3,11 @@ import Router from 'vue-router'
 import App from '../App.vue'
 import Home from '../pages/Home.vue'
 import Home2 from '../pages/Home2.vue'
+import HomeDec from '../pages/HomeDec.vue'
 import HomePC from '../pages/HomePC.vue'
 import RegisterPhone from '../pages/RegisterPhone.vue'
 import RegisterPhone2 from '../pages/RegisterPhone2.vue'
+import RegisterPhoneDec from '../pages/RegisterPhoneDec.vue'
 import PayPc from '../pages/PayPC.vue'
 import Coder from '../pages/code.vue'
 import CodePC from '../pages/CodePC.vue'
@@ -41,6 +43,16 @@ export default new Router({
           name: 'registerPhone2',
           path: '/registerPhone2',
           component: RegisterPhone2
+        },
+        {
+          name: 'homeDec',
+          path: '/homeDec',
+          component: HomeDec
+        },
+        {
+          name: 'registerPhoneDec',
+          path: '/registerPhoneDec',
+          component: RegisterPhoneDec
         },
         {
           name: 'homePC',

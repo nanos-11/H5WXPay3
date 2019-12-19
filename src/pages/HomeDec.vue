@@ -38,7 +38,7 @@
       <div class="banner"><img src="../../static/images/bac3.png" alt="" width="100%"></div>
     </section>
     <section class="page1">
-      <div class="banner"><img src="../../static/images/bac42.png" alt="" width="100%"></div>
+      <div class="banner"><img src="../../static/images/bac4.png" alt="" width="100%"></div>
     </section>
     <section class="page1">
       <div class="banner"><img src="../../static/images/bac5.png" alt="" width="100%"></div>
@@ -66,7 +66,7 @@
 
 <script>
   export default {
-    name: "Home2",
+    name: "HomeDec",
     data() {
       return {
         minutes: 30,
@@ -131,16 +131,14 @@
           let appid = 'wx4a597f8c6a839610'
           // console.log('nan intentRegister', isiOS)
           if (isiOS) {
-            window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhone2?type=' + type
+            window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhoneDec?type=' + type
           } else {
-            // http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhone/
-            let url = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhone2?type=' + type;
+            let url = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhoneDec?type=' + type;
             window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='
               + appid + '&redirect_uri=' + encodeURIComponent(url) + '&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
-            // this.$router.push({name: 'registerPhone', params: {type: type}})
           }
         } else {
-          window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhone2?type=' + type
+          window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhoneDec?type=' + type
         }
       }
     }

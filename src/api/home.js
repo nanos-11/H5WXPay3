@@ -63,6 +63,19 @@ export function getPhoneData(phone, seaName) {
     url: 'https://api.luboedu.cn/1.0/Onlinequestion/tanglang?' + qs.stringify(params)
   })
 }
+export function getPhoneDataDec(phone, seaName) {
+  let params = []
+  params.phone = phone
+  params.courseName = '愈见'
+  params.buName = '信息流事业部(合作)'
+  params.sourceType = '信息流事业部合作_心谕者社群军团_心理训练营_今日头条_信息流_asd_全国'
+  params.seaName = seaName
+  params.adName = "今日头条"
+  return request({
+    method: 'get',
+    url: 'https://api.luboedu.cn/1.0/Onlinequestion/tanglang?' + qs.stringify(params)
+  })
+}
 export function getPhoneDataPC(phone, seaName) {
   let params = []
   params.phone = phone
