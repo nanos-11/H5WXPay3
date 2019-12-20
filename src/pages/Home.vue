@@ -35,19 +35,22 @@
       <div class="banner"><img src="../../static/images/bac2.png" alt="" width="100%"></div>
     </section>
     <section class="page1">
-      <div class="banner"><img src="../../static/images/bac3.png" alt="" width="100%"></div>
+      <div class="banner"><img src="../../static/images/bac3.jpg" alt="" width="100%"></div>
     </section>
     <section class="page1">
-      <div class="banner"><img src="../../static/images/bac4.png" alt="" width="100%"></div>
+      <div class="banner"><img src="../../static/images/bac42.jpg" alt="" width="100%"></div>
+    </section>
+    <section class="page1">
+      <div class="banner"><img src="../../static/images/bac43.jpg" alt="" width="100%"></div>
     </section>
     <section class="page1">
       <div class="banner"><img src="../../static/images/bac5.png" alt="" width="100%"></div>
     </section>
     <section class="page1">
-      <div class="banner"><img src="../../static/images/bac6.png" alt="" width="100%"></div>
+      <div class="banner"><img src="../../static/images/bac6.jpg" alt="" width="100%"></div>
     </section>
     <section class="page1">
-      <div class="banner"><img src="../../static/images/bac7.png" alt="" width="100%"></div>
+      <div class="banner"><img src="../../static/images/bac7.jpg" alt="" width="100%"></div>
     </section>
     <section class="buybox">
       <div class="footerbox">
