@@ -44,10 +44,10 @@
               <img class='wx' src="../../static/images/wxpay.png" alt="" style="width:0.5rem;height:0.5rem">
             </van-cell>
             
-            <van-cell title="支付宝" clickable @click="radio === '2'">
+            <!--<van-cell title="支付宝" clickable @click="radio === '2'">
               <van-radio slot="right-icon" name="2"/>
               <img class='al' src="../../static/images/alipay.jpg" alt="" style="width:0.5rem;height:0.5rem">
-            </van-cell>
+            </van-cell>-->
           </van-cell-group>
         </van-radio-group>
         <!--        -->

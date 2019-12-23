@@ -34,7 +34,7 @@ export function getBindVerCode(phone) {
 }
 
 /**
- *  https://api.luboedu.cn/1.0/Onlinequestion/tanglang
+ *  https://apis.luboedu.cn/1.0/Onlinequestion/tanglang
  *  phone: res.data,
  *  courseName: '自考',
  *  buName: '北京事业部',
@@ -53,14 +53,14 @@ export function getBindVerCode(phone) {
 export function getPhoneData(phone, seaName) {
   let params = []
   params.phone = phone
-  params.courseName = '7天卓越父母成长课'
+  params.courseName = '愈见'
   params.buName = '信息流事业部(合作)'
   params.sourceType = '信息流事业部合作_心谕者社群军团_心理训练营_今日头条_信息流_lubo_全国'
   params.seaName = seaName
   params.adName = "今日头条"
   return request({
     method: 'get',
-    url: 'https://api.luboedu.cn/1.0/Onlinequestion/tanglang?' + qs.stringify(params)
+    url: 'https://apis.luboedu.cn/1.0/Onlinequestion/tanglang?' + qs.stringify(params)
   })
 }
 export function getPhoneDataDec(phone, seaName) {
@@ -73,7 +73,7 @@ export function getPhoneDataDec(phone, seaName) {
   params.adName = "今日头条"
   return request({
     method: 'get',
-    url: 'https://api.luboedu.cn/1.0/Onlinequestion/tanglang?' + qs.stringify(params)
+    url: 'https://apis.luboedu.cn/1.0/Onlinequestion/tanglang?' + qs.stringify(params)
   })
 }
 export function getPhoneDataPC(phone, seaName) {
@@ -86,7 +86,7 @@ export function getPhoneDataPC(phone, seaName) {
   params.adName = "360"
   return request({
     method: 'get',
-    url: 'https://api.luboedu.cn/1.0/Onlinequestion/tanglang?' + qs.stringify(params)
+    url: 'https://apis.luboedu.cn/1.0/Onlinequestion/tanglang?' + qs.stringify(params)
   })
 }
 
@@ -100,7 +100,7 @@ export function getPhoneData2(phone, seaName) {
   params.adName = "广点通"
   return request({
     method: 'get',
-    url: 'https://api.luboedu.cn/1.0/Onlinequestion/tanglang?' + qs.stringify(params)
+    url: 'https://apis.luboedu.cn/1.0/Onlinequestion/tanglang?' + qs.stringify(params)
   })
 }
 
