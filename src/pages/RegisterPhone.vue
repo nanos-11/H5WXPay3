@@ -64,8 +64,24 @@
           <div class="money">{{price}}</div>
         </div>
       </div>
-      <button class="pay-right" @click="loginPhone" :disabled="isPay">{{isPayMessage}}</button>
+      <button class="pay-right" @click="loginPhone">{{isPayMessage}}</button>
     </div>
+    <section class="openBox" v-show="dialogPay">
+      <div class="codeBox">
+        <div class="closeButton" @click="closeCode">
+          X
+        </div>
+        <div class="top">
+          添加微信号或长按保存下方二维码添加您的学习专属班
+        </div>
+        <div class="box">
+          <img src="../../static/images/coder3.png" alt="">
+        </div>
+        <div class="bottom">
+          微信号：18515028309
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -139,6 +155,7 @@
     name: "RegisterPhone",
     data() {
       return {
+        dialogPay: false,
         wxCode: '',
         minutes: 10,
         seconds: 0,
@@ -322,12 +339,19 @@
           meteor.track('form', {convert_id: 1651889015433227})
         }
       },
+      closeCode() {
+        this.dialogPay = false;
+      },
       /**
        * 根据手机号登录或者注册
        * @date 2019/6/19
        * @author nan
        */
       loginPhone() {
+        if (this.isPay) {
+          this.dialogPay = true;
+          return;
+        }
         // 验证手机号是否正确
         if (!verifyPhone.call(this)) return
         // 验证验证码是否正确
@@ -570,6 +594,7 @@
 <style scoped lang="css">
   @import "../../static/css/chunkd.css";
   @import "../../static/css/pay.css";
+  @import "../../static/css/wxse.css";
   
   /deep/ .van-cell {
     font-size: 0.32rem;
