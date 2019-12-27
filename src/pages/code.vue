@@ -4,10 +4,10 @@
       添加微信号或长按保存下方二维码添加您的学习专属班
     </div>
     <div class="box">
-      <img src="../../static/images/coder3.png" alt="">
+      <img src="../../static/images/coder3.jpg" alt="">
     </div>
     <div class="line">
-      微信号：18515028309
+      微信号：13141204632
     </div>
   </div>
 </template>

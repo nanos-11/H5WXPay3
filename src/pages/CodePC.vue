@@ -5,7 +5,7 @@
         添加老师微信，发送支付凭证，确认支付有效后，等待老师拉入班级群
       </div>
       <div class="img">
-        <img src="../../static/images/coder3.png" alt="">
+        <img src="../../static/images/coder3.jpg" alt="">
       </div>
     </div>
   

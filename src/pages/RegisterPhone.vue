@@ -14,6 +14,9 @@
         </div>
       </div>
       <div class="gap"></div>
+      <div class="extra">
+        <img src="../../static/images/hint.png" alt="" width="100%">
+      </div>
       <div class="verify-tel">
         <div class="verify-title">验证手机</div>
         <div class="tel-space">
@@ -75,10 +78,10 @@
           添加微信号或长按保存下方二维码添加您的学习专属班
         </div>
         <div class="box">
-          <img src="../../static/images/coder3.png" alt="">
+          <img src="../../static/images/coder3.jpg" alt="">
         </div>
         <div class="bottom">
-          微信号：18515028309
+          微信号：13141204632
         </div>
       </div>
     </section>

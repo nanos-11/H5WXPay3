@@ -51,6 +51,7 @@
     </section>
     <section class="page1">
       <div class="banner"><img src="../../static/images/bac7.jpg" alt="" width="100%"></div>
+      <div><br></div>
     </section>
     <section class="buybox">
       <div class="footerbox">
