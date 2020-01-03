@@ -54,7 +54,13 @@
       <div><br></div>
     </section>
     <section class="buybox">
-      <div class="footerbox">
+      <div class="footerbox" v-if="isPay">
+        <div class="checkcode" @click="checkCoder">
+          <div class="fon1">已购买点击查看二维码</div>
+        </div>
+      </div>
+      
+      <div class="footerbox" v-else>
         <div class="buyleft" @click="intentRegister(2)">
           <div class="fon1">¥699</div>
           <div class="fon2">原价购买</div>
@@ -65,14 +71,36 @@
         </div>
       </div>
     </section>
+    
+    <section class="openBox" v-show="dialogPay">
+      <div class="codeBox">
+        <div class="closeButton" @click="closeCode">
+          X
+        </div>
+        <div class="top">
+          添加微信号或长按保存下方二维码添加您的学习专属班
+        </div>
+        <div class="box">
+          <img src="../../static/images/coder3.jpg" alt="">
+        </div>
+        <div class="bottom">
+          微信号：13141204632
+        </div>
+      </div>
+    </section>
+  
   </div>
 </template>
 
 <script>
+  import {isPay} from "../api/home";
+  
   export default {
     name: "Home",
     data() {
       return {
+        isPay: false,
+        dialogPay: false,
         minutes: 30,
         seconds: 0,
       }
@@ -98,9 +126,23 @@
       }
     },
     created() {
+      let phone = localStorage.getItem('phone');
+      isPay(phone, 3).then(res => {
+        this.isPay = res.status
+        if (res && res.status) {
+          this.dialogPay = true;
+        }
+      })
+      
       this.add()
     },
     methods: {
+      checkCoder() {
+        this.dialogPay = true
+      },
+      closeCode() {
+        this.dialogPay = false;
+      },
       is_weixin() {
         let ua = navigator.userAgent.toLowerCase();
         let isWinxin = ua.indexOf('micromessenger') !== -1;

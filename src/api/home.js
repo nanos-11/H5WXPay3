@@ -63,6 +63,7 @@ export function getPhoneData(phone, seaName) {
     url: 'https://apis.luboedu.cn/1.0/Onlinequestion/tanglang?' + qs.stringify(params)
   })
 }
+
 export function getPhoneDataDec(phone, seaName) {
   let params = []
   params.phone = phone
@@ -76,6 +77,7 @@ export function getPhoneDataDec(phone, seaName) {
     url: 'https://apis.luboedu.cn/1.0/Onlinequestion/tanglang?' + qs.stringify(params)
   })
 }
+
 export function getPhoneDataPC(phone, seaName) {
   let params = []
   params.phone = phone
@@ -120,6 +122,7 @@ export function loginPhone(phone, code, course_id) {
 
 /**
  * 创建阿里订单
+ * GET 是网页端    POST是手机端
  *
  * @date 2019/6/26
  * @author nan
@@ -128,6 +131,16 @@ export function loginPhone(phone, code, course_id) {
 export function createAliPay(data) {
   console.log('nan createAliPay', data)
   // console.log('nan 绑定订单请求的地址：', 'http://192.168.0.251:88/Marketingcourse/Nineyuan/createAliPay', data)
+  return request({
+    method: 'post',
+    url: config.baseURL + 'Marketingcourse/Nineyuan/createAliPay2',
+    data: data
+  })
+}
+
+export function createAliPay2(data) {
+  console.log('nan createAliPay2', data)
+  // console.log('nan 绑定订单请求的地址：', 'http://192.168.0.251:88/Marketingcourse/Nineyuan/createAliPay2', data)
   return request({
     method: 'get',
     url: config.baseURL + 'Marketingcourse/Nineyuan/createAliPay2?phone='

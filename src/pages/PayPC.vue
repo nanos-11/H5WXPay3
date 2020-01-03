@@ -79,7 +79,7 @@
 <script>
   import "../../static/js/cover.min.js"
   import QRCode from 'qrcodejs2'  // 引入qrcode
-  import {isPay, getBindVerCode, loginPhone, createAliPay, getPhoneDataPC, createWXPay} from "../api/home";
+  import {isPay, getBindVerCode, loginPhone, createAliPay2, getPhoneDataPC, createWXPay} from "../api/home";
   
   /**
    * 验证手机号是否正确
@@ -311,7 +311,7 @@
           'course_id': 3,
           'status': this.type
         }
-        createAliPay(params).then(res => {
+        createAliPay2(params).then(res => {
           if (res === undefined) {
             return
           }

@@ -1,78 +1,90 @@
-
-
-
-
 /**/
-html{
-    font-size:10px
+html {
+  font-size: 10px
 }
-@media screen and (min-width:321px) and (max-width:375px){
-    html{
-        font-size:11px
-    }
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  html {
+    font-size: 11px
+  }
 }
-@media screen and (min-width:376px) and (max-width:414px){
-    html{
-        font-size:12px
-    }
+
+@media screen and (min-width: 376px) and (max-width: 414px) {
+  html {
+    font-size: 12px
+  }
 }
-@media screen and (min-width:415px) and (max-width:639px){
-    html{
-        font-size:15px
-    }
+
+@media screen and (min-width: 415px) and (max-width: 639px) {
+  html {
+    font-size: 15px
+  }
 }
-@media screen and (min-width:640px) and (max-width:719px){
-    html{
-        font-size:20px
-    }
+
+@media screen and (min-width: 640px) and (max-width: 719px) {
+  html {
+    font-size: 20px
+  }
 }
-@media screen and (min-width:720px) and (max-width:749px){
-    html{
-        font-size:22.5px
-    }
+
+@media screen and (min-width: 720px) and (max-width: 749px) {
+  html {
+    font-size: 22.5px
+  }
 }
-@media screen and (min-width:750px) and (max-width:799px){
-    html{
-        font-size:23.5px
-    }
+
+@media screen and (min-width: 750px) and (max-width: 799px) {
+  html {
+    font-size: 23.5px
+  }
 }
-@media screen and (min-width:800px){
-    html{
-        font-size:25px
-    }
+
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 25px
+  }
 }
 
 
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{
-    margin:0;
-    padding:0;
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
 }
+
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
-ul,ol {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
+
 /* 移动端图片边框   相当于  border:0 */
-img {vertical-align: top;}
+img {
+  vertical-align: top;
+}
+
 /* -webkit-tap-highlight-color:rgba(0,0,0,0);//透明度设置为0，去掉点击链接和文本框对象时默认的灰色半透明覆盖层(iOS)或者虚框(Android)  */
 a,
 input,
 button {
-    /*-webkit-tap-highlight-color: rgba(0, 0, 0, 0);*/
+  /*-webkit-tap-highlight-color: rgba(0, 0, 0, 0);*/
 }
+
 /* 取消chrome下默认的文本框聚焦样式 */
-input,textarea{outline:none}
+input, textarea {
+  outline: none
+}
 
 /* 去掉IOS移除原生控件样式 */
 /* -webkit-appearance: none; */
 /* 消除输入框和按钮的原生外观，在iOS上加上这个属性才能给按钮和输入框自定义样式  */
 input,
 button {
-   /* -webkit-appearance: none;
-    border-radius: 0;*/
+  /* -webkit-appearance: none;
+   border-radius: 0;*/
 }
 
 /* -webkit-touch-callout:none;  */
@@ -82,7 +94,7 @@ button {
 /* 禁止页面文字选择 ，此属性不继承，一般加在body上规定整个body的文字都不会自动调整 */
 /* 禁止移动端用户进行复制.选择. */
 body {
-    margin: 0;
+  margin: 0;
 }
 
 
@@ -90,239 +102,329 @@ body * {
 }
 
 body {
-    max-width: 750px;
-    min-width: 300px;
-    min-height: 100%;
-    margin: 0 auto;
+  max-width: 750px;
+  min-width: 300px;
+  min-height: 100%;
+  margin: 0 auto;
 }
+
 /* 移动端横竖屏字体乎大乎小 */
 
-.black{
-    color: black;
-}
-.nav{
-    width: 100%;
-    height: 3rem;
-    line-height: 3rem;
-    margin: 0 auto;
-
-    background: #0eb268;
-    color: white;
-    font-size: 1rem;
-    text-align: center;
-}
-.nav ul{
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-
-
-
+.black {
+  color: black;
 }
 
-.fonts{
-    font-size: 2rem;
-    text-align: center;
-    width: 100%;
-    height: auto;
-    font-weight: bold;
-    color: #1b1e3f;
-    margin: 1rem auto 1rem auto;
+.nav {
+  width: 100%;
+  height: 3rem;
+  line-height: 3rem;
+  margin: 0 auto;
+
+  background: #0eb268;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
 }
 
-.fonts3{
-    font-size: 2rem;
-    text-align: center;
-    width: 100%;
-    height: 4rem;
-    font-weight: bold;
-    color: #1b1e3f;
-    margin: 1rem auto 1rem auto;
-}
-.fonts3 img{
-   width: 5rem;
-    height: 2.5rem;
-}
-
-.issue{
-    width: 90%;
-    height: auto;
-   margin: 1rem auto;
-}
-.issue ul{
-    width: 100%;
-    height: 10rem;
-    margin: 1rem auto;
-}
-.issue ul li{
-    width: 100%;
-    height: 2.5rem;
-    margin: 1rem auto;
-    color: white;
-    text-align: center;
-    line-height: 2.5rem;
-}
-.issue ul li  .wenti{
-    width: 65%;
-    height: 2.5rem;
-    float: left;
-    background: #0cb164;
-    border-radius: 50px;
-}
-.issue ul li  .btns{
-    width: 30%;
-    height: 2.5rem;
-    float: right;
-    background: #f2883d;
-    border-radius: 50px;
-    cursor: pointer;
-}
+.nav ul {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
 
 
+}
 
-.baominfon{
-    width: 95%;
-    /*height: 3rem;*/
-    font-size: 0.4rem;
-     margin: 30px auto;
-    text-align: left;
-    /*line-height: 3rem;*/
+.fonts {
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  font-weight: bold;
+  color: #1b1e3f;
+  margin: 1rem auto 1rem auto;
 }
-.tuan{
-    width: 95%;
-    /*height: 5rem;*/
-    font-size: 1.5rem;
-    margin: 30px auto;
-    text-align: left;
-    /*line-height: 5rem;*/
-    border-top: 1px solid #ebebeb;
-    border-bottom: 1px solid #ebebeb;
+
+.fonts3 {
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  height: 4rem;
+  font-weight: bold;
+  color: #1b1e3f;
+  margin: 1rem auto 1rem auto;
 }
-.tuan  .rightbox{
-    float: right;
-    width: 55%;
-    /*height: 0.5rem;*/
-    line-height: 0.5rem;
-    text-align: center;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+
+.fonts3 img {
+  width: 5rem;
+  height: 2.5rem;
 }
-.tuan  .rightbox  .timesbox{
-   /*width: 8rem;*/
-    /*height: 4rem;*/
-    float: left;
+
+.issue {
+  width: 90%;
+  height: auto;
+  margin: 1rem auto;
 }
-.tuan  .rightbox  .timesbox  .h1s{
-    font-size: .25rem;
-    width: 100%;
-    /*height: 2rem;*/
-    /*line-height: 2rem;*/
+
+.issue ul {
+  width: 100%;
+  height: 10rem;
+  margin: 1rem auto;
 }
-.tuan  .rightbox  .btn{
-    /*width: 7rem;*/
-    /*height: 4rem;*/
-    float: right;
+
+.issue ul li {
+  width: 100%;
+  height: 2.5rem;
+  margin: 1rem auto;
+  color: white;
+  text-align: center;
+  line-height: 2.5rem;
+}
+
+.issue ul li .wenti {
+  width: 65%;
+  height: 2.5rem;
+  float: left;
+  background: #0cb164;
+  border-radius: 50px;
+}
+
+.issue ul li .btns {
+  width: 30%;
+  height: 2.5rem;
+  float: right;
+  background: #f2883d;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+
+.baominfon {
+  width: 95%;
+  /*height: 3rem;*/
+  font-size: 0.4rem;
+  margin: 30px auto;
+  text-align: left;
+  /*line-height: 3rem;*/
+}
+
+.tuan {
+  width: 95%;
+  /*height: 5rem;*/
+  font-size: 1.5rem;
+  margin: 30px auto;
+  text-align: left;
+  /*line-height: 5rem;*/
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.tuan .rightbox {
+  float: right;
+  width: 55%;
+  /*height: 0.5rem;*/
+  line-height: 0.5rem;
+  text-align: center;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+.tuan .rightbox .timesbox {
+  /*width: 8rem;*/
+  /*height: 4rem;*/
+  float: left;
+}
+
+.tuan .rightbox .timesbox .h1s {
+  font-size: .25rem;
+  width: 100%;
+  /*height: 2rem;*/
+  /*line-height: 2rem;*/
+}
+
+.tuan .rightbox .btn {
+  /*width: 7rem;*/
+  /*height: 4rem;*/
+  float: right;
   margin-top: .2rem;
 
 }
-.tuan  .rightbox  .btn .btns{
-    width: 1.5rem;
-    height: 0.6rem;
-    background: #ff4b47;
-    border-radius: 10rem;
-    text-align: center;
-    line-height: 0.6rem;
-    color: white;
+
+.tuan .rightbox .btn .btns {
+  width: 1.5rem;
+  height: 0.6rem;
+  background: #ff4b47;
+  border-radius: 10rem;
+  text-align: center;
+  line-height: 0.6rem;
+  color: white;
   font-size: .3rem;
 
 }
-.tuan .leftbox{
-    float: left;
-    width: 40%;
-    /*height: 4rem;*/
-    /*line-height: 4rem;*/
-    text-align: center;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-}
-.tuan .leftbox .imgs{
-    width: 1rem;
-    height: 1rem;
-    float: left;
-}
-.tuan .leftbox .imgs img{
-    width: 100%;
-    height: 100%;
+
+.tuan .leftbox {
+  float: left;
+  width: 40%;
+  /*height: 4rem;*/
+  /*line-height: 4rem;*/
+  text-align: center;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
 }
 
-.buybox{
-    width: 100%;
-    height: 1.3rem;
-    margin: 0 auto;
-    position: fixed;
-    left: 0;
-    bottom: 0;
+.tuan .leftbox .imgs {
+  width: 1rem;
+  height: 1rem;
+  float: left;
 }
-.footerbox{
+
+.tuan .leftbox .imgs img {
+  width: 100%;
+  height: 100%;
+}
+
+.buybox {
+  width: 100%;
+  height: 1.3rem;
+  margin: 0 auto;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.footerbox {
   width: 90%;
   height: 4rem;
   margin: 0 auto;
 }
-.buybox  .buyleft{
-    width: 50%;
-    height: 1rem;
-    float: left;
-    background: #f8a600;
-    border-radius: 10rem 0 0 10rem;
-}
-.buybox  .buyleft .fon1{
-    width: 100%;
-    height: 0.6rem;
-    margin: 0 auto;
-    font-size: 0.45rem;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    /*line-height: 1rem;*/
-}
-.buybox  .buyleft .fon2{
-    width: 100%;
-    height: 0.5rem;
-    margin: 0 auto;
-    font-size: 0.24rem;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    /*line-height: 0.5rem;*/
+
+.buybox .buyleft {
+  width: 50%;
+  height: 1rem;
+  float: left;
+  background: #f8a600;
+  border-radius: 10rem 0 0 10rem;
 }
 
-.buybox  .buyright{
-    width: 50%;
-    height: 1rem;
-    float: right;
-    background: #ff4b47;
-    border-radius: 0 10rem 10rem 0;
+.buybox .checkcode {
+  width: 100%;
+  height: 1rem;
+  float: left;
+  background: #f8a600;
+  border-radius: 10rem;
 }
-.buybox  .buyright .fon1{
-    width: 100%;
-    height: 0.6rem;
-    margin: 0 auto;
-    font-size: 0.45rem;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    /*line-height: 1rem;*/
+
+.buybox .checkcode .fon1 {
+  width: 100%;
+  height: 100%;
+  margin: 0.15rem auto;
+  font-size: 0.45rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
 }
-.buybox  .buyright .fon2{
-    width: 100%;
-    height: 0.5rem;
-    margin: 0 auto;
-    font-size: 0.24rem;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    /*line-height: 0.5rem;*/
+
+
+.buybox .buyleft .fon1 {
+  width: 100%;
+  height: 0.6rem;
+  margin: 0 auto;
+  font-size: 0.45rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  /*line-height: 1rem;*/
 }
+
+.buybox .buyleft .fon2 {
+  width: 100%;
+  height: 0.5rem;
+  margin: 0 auto;
+  font-size: 0.24rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  /*line-height: 0.5rem;*/
+}
+
+.buybox .buyright {
+  width: 50%;
+  height: 1rem;
+  float: right;
+  background: #ff4b47;
+  border-radius: 0 10rem 10rem 0;
+}
+
+.buybox .buyright .fon1 {
+  width: 100%;
+  height: 0.6rem;
+  margin: 0 auto;
+  font-size: 0.45rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  /*line-height: 1rem;*/
+}
+
+.buybox .buyright .fon2 {
+  width: 100%;
+  height: 0.5rem;
+  margin: 0 auto;
+  font-size: 0.24rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  /*line-height: 0.5rem;*/
+}
+
+
+.codeBox .closeButton {
+  font-size: .3rem;
+  border: 1px solid #ccc;
+  padding: .2rem;
+  text-align: right;
+}
+
+.openBox {
+  position: fixed;
+  margin: 0 auto;
+  z-index: 9999;
+  top: 30%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 6rem;
+  border-radius: 10px;
+  height: 6rem;
+  background-color: #ffffff;
+  border: 1px solid #5c5c5c;
+}
+
+.openBox .top {
+  text-align: center;
+  padding: .1rem;
+  font-size: .3rem;
+}
+
+.openBox .box {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.openBox .box img {
+  display: inline;
+  width: 50%;
+  height: 50%;
+}
+
+.openBox .bottom {
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  font-size: .3rem;
+  text-align: center;
+}
+
 
 
 

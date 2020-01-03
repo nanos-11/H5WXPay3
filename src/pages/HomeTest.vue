@@ -177,14 +177,14 @@
           let appid = 'wx4a597f8c6a839610'
           // console.log('nan intentRegister', isiOS)
           if (isiOS) {
-            window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhoneDec?type=' + type
+            window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhoneTest?type=' + type
           } else {
-            let url = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhoneDec?type=' + type;
+            let url = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhoneTest?type=' + type;
             window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='
               + appid + '&redirect_uri=' + encodeURIComponent(url) + '&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
           }
         } else {
-          window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhoneDec?type=' + type
+          window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhoneTest?type=' + type
         }
       }
     }

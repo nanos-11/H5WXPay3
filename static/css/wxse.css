@@ -586,6 +586,7 @@ input, textarea {
 }
 
 .openBox {
+  z-index: 9999;
   position: fixed;
   margin: 0 auto;
   top: 30%;
@@ -671,6 +672,5 @@ input, textarea {
   color: white;
   font-size: 1.5rem;
   box-shadow: 0rem .2rem .3rem #b1cff9;
-
 }
 

@@ -90,7 +90,7 @@
 
 <script>
   import "../../static/js/cover.min.js"
-  import {isPay, getBindVerCode, loginPhone, createAliPay, getPhoneDataDec, createWXPay} from "../api/home";
+  import {createAliPay, createWXPay, getBindVerCode, getPhoneData, isPay, loginPhone} from "../api/home";
   
   /**
    * 验证手机号是否正确
@@ -155,7 +155,7 @@
   }
   
   export default {
-    name: "RegisterPhoneDec",
+    name: "RegisterPhoneTest",
     data() {
       return {
         dialogPay: false,
@@ -172,7 +172,6 @@
         count: '',
         // 时间默认为null
         timer: null,
-        
         phone: '',
         code: '',
         /*dialog: {
@@ -328,14 +327,15 @@
           }
         })
         // 获取手机号给螳螂
-        getPhoneDataDec(this.phone, this.address).then(res => {
+        getPhoneData(this.phone, this.address).then(res => {
         })
-        meteor.track("form", {convert_id: "1653075513113613"})
-        // if (this.type === '2') {
-        //   meteor.track('form', {convert_id: 1651889116605448})
-        // } else {
-        //   meteor.track('form', {convert_id: 1651889015433227})
-        // }
+        
+        if (this.type === '2') {
+          // 699
+          meteor.track('form', {convert_id: 1651889116605448})
+        } else {
+          meteor.track('form', {convert_id: 1651889015433227})
+        }
       },
       closeCode() {
         this.dialogPay = false;
@@ -402,7 +402,7 @@
           'phone': this.phone,
           'subject': '7天带你了解心理学',
           'course_id': 3,
-          'status': this.price === 49 ? 1 : 2,
+          'status': 0,
         }
         let _this = this;
         createAliPay(params).then(res => {
@@ -432,8 +432,6 @@
           window.alert("支付失败")
         })
       },
-      
-      
       /**
        * 微信支付
        *
@@ -462,8 +460,10 @@
           // console.log('nan startWxPay local 4', local)
           // 如果没有code 或 openId，则去请求
           if (!this.wxCode && !openId) {
+            let url = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhone?type=' + this.type
             window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='
               + appid + '&redirect_uri=' + encodeURIComponent(local) + '&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
+            
             // console.log('nan startWxPay-------->', openId)
           } else {
             // 调用接口 微信内部打开微信支付
@@ -487,12 +487,14 @@
           'subject': '7天带你了解心理学',
           'course_id': 3,
           'code': code,
-          'status': this.price === 49 ? 1 : 2,
+          'status': 0,
           'pay_type': pay_type
         }
         createWXPay(params).then(res => {
           if (pay_type === 'MWEB') {
             if (res.status) {
+              // window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/homeTest'
+              this.$router.push({path: '/homeTest', query: {phone: this.phone}})
               window.location.href = res.result
             } else {
               this.isPay = !res.status
@@ -528,6 +530,7 @@
             "paySign": params.paySign  //微信签名
           },
           function (res) {
+            console.log('nan ', res)
             if (res.err_msg === 'get_brand_wcpay_request:ok') {
               // console.log('nan ', '支付成功！');
               window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/coder'
