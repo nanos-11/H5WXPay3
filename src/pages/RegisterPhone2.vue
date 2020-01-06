@@ -399,7 +399,7 @@
         // 绑定订单
         let params = {
           'phone': this.phone,
-          'subject': '7天带你了解心理学',
+          'subject': '愈见心理课',
           'course_id': 3,
           'status': this.price === 49 ? 1 : 2,
         }
@@ -470,7 +470,7 @@
         console.log('nan createOrder--->', code, pay_type)
         let params = {
           'phone': this.phone,
-          'subject': '7天带你了解心理学',
+          'subject': '愈见心理课',
           'course_id': 3,
           'code': code,
           'status': this.price === 49 ? 1 : 2,

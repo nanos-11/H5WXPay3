@@ -307,7 +307,7 @@
         // 绑定订单
         let params = {
           'phone': this.phone,
-          'subject': '7天带你了解心理学',
+          'subject': '愈见心理课',
           'course_id': 3,
           'status': this.type
         }
