@@ -15,7 +15,7 @@
       </div>
       <div class="gap"></div>
       <div class="extra">
-        <img src="../../static/images/hint.png" alt="" width="100%">
+        <img src="../../static/images/hint.jpg" alt="" width="100%">
       </div>
       <div class="verify-tel">
         <div class="verify-title">验证手机</div>
