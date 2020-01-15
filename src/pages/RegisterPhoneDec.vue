@@ -14,9 +14,6 @@
         </div>
       </div>
       <div class="gap"></div>
-      <div class="extra">
-        <img src="../../static/images/hint.jpg" alt="" width="100%">
-      </div>
       <div class="verify-tel">
         <div class="verify-title">验证手机</div>
         <div class="tel-space">
@@ -39,6 +36,9 @@
       <div class="gap"></div>
       <div class="course-info">
         <div style="font-size: 0.25rem;margin-left: 0.22rem;color: red">支付成功→手动返回页面原app中→已完成付款→获取老师信息</div>
+        <div class="extra">
+          <img src="../../static/images/hint.jpg" alt="" width="100%">
+        </div>
         <div class="course-title">支付方式</div>
         <!--        -->
         <van-radio-group v-model="radio">
