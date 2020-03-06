@@ -244,9 +244,9 @@
         this.isPay = res.status
         this.isPayMessage = res.status ? '已支付' : '确认支付';
         
-        let timerAliPay = window.setInterval(function () {
+        let t = window.setInterval(function () {
           if (res && res.status) {
-            window.clearInterval(timerAliPay)
+            window.clearInterval(t)
             window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/coder'
           }
         }, 2000)
@@ -405,7 +405,7 @@
           'phone': this.phone,
           'subject': '愈见心理课',
           'course_id': 4,
-          'status': this.price === 9.9 ? 3 : 4,//3=>9.9 4=>199
+          'status': this.price === 9.9 ? 0 : 0,//3=>9.9 4=>199
           'returnURL': 'http://yujianzky.51nicelearn.com/onlinebuy/#/coder',
           'quitUrl': 'http://yujianzky.51nicelearn.com/onlinebuy/#/nineNew'
         }
@@ -424,7 +424,7 @@
                 _this.isPay = res.status
                 _this.isPayMessage = res.status ? '已支付' : '确认支付';
                 window.clearInterval(timerAliPay)
-                window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/coder'
+                // window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/coder'
               }
             })
           }, 3000)
@@ -492,7 +492,7 @@
           'subject': '愈见心理课',
           'course_id': 4,
           'code': code,
-          'status': this.price === 9.9 ? 3 : 4,
+          'status': this.price === 9.9 ? 0 : 0,
           'pay_type': pay_type
         }
         createWXPay(params).then(res => {
