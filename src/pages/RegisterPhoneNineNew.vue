@@ -35,7 +35,6 @@
       </div>
       <div class="gap"></div>
       <div class="course-info">
-<!--        <div style="font-size: 0.25rem;margin-left: 0.22rem;color: red">支付成功→手动返回页面原app中→已完成付款→获取老师信息</div>-->
         <div class="extra">
           <img src="../../static/images/hint1.jpg" alt="" width="100%">
         </div>
@@ -55,9 +54,6 @@
         </van-radio-group>
         <!--        -->
         <div class="line"></div>
-        <!--<div class="extra">
-          <img src="../../static/images/coures_details.jpg" alt="" width="100%">
-        </div>-->
       </div>
     </div>
     <div class="pay-btn">
@@ -90,7 +86,7 @@
 
 <script>
   import "../../static/js/cover.min.js"
-  import {isPay, getBindVerCode, loginPhone, createAliPay, getPhoneDataDec, createWXPay} from "../api/home";
+  import {isPay, getBindVerCode, loginPhone, createAliPay, getPhoneDataNineNew, createWXPay} from "../api/home";
   
   /**
    * 验证手机号是否正确
@@ -155,7 +151,7 @@
   }
   
   export default {
-    name: "RegisterPhoneDec",
+    name: "RegisterPhoneNineNew",
     data() {
       return {
         dialogPay: false,
@@ -184,7 +180,7 @@
         timerPay: false,
         isPayMessage: '确认支付',
         merID: '1497884262',  // 商户号
-        price: 49,
+        price: 9.9,
         type: '1',
         // JSAPI 就是微信内部吊起支付 MWEB 就是微信外
         pay_type: 'JSAPI',
@@ -239,12 +235,12 @@
     created() {
       this.type = decodeURIComponent(this.$route.query.type);
       if (this.type === '2') {
-        this.price = 699
+        this.price = 199
       }
       localStorage.setItem('price', this.price);
       
       let phone = localStorage.getItem('phone');
-      isPay(phone, 3).then(res => {
+      isPay(phone, 4).then(res => {
         this.isPay = res.status
         this.isPayMessage = res.status ? '已支付' : '确认支付';
       })
@@ -328,9 +324,9 @@
           }
         })
         // 获取手机号给螳螂
-        getPhoneDataDec(this.phone, this.address).then(res => {
+        getPhoneDataNineNew(this.phone, this.address).then(res => {
         })
-        meteor.track("form", {convert_id: "1653075513113613"})
+        meteor.track("form", {convert_id: "1660316880834572"})
         // if (this.type === '2') {
         //   meteor.track('form', {convert_id: 1651889116605448})
         // } else {
@@ -357,7 +353,7 @@
         // 保存手机号
         localStorage.setItem('phone', this.phone)
         // 登录注册接口
-        loginPhone(this.phone, this.code, 3).then(res => {
+        loginPhone(this.phone, this.code, 4).then(res => {
           // 开始支付
           // console.log('nan re', res)
           if (res === undefined) {
@@ -401,10 +397,10 @@
         let params = {
           'phone': this.phone,
           'subject': '愈见心理课',
-          'course_id': 3,
-          'status': this.price === 49 ? 1 : 2,
+          'course_id': 4,
+          'status': this.price === 9.9 ? 0 : 0,
           'returnURL':'http://yujianzky.51nicelearn.com/onlinebuy/#/coder',
-          'quitUrl':'http://yujianzky.51nicelearn.com/onlinebuy/#/homeDec'
+          'quitUrl':'http://yujianzky.51nicelearn.com/onlinebuy/#/nineNew'
         }
         let _this = this;
         createAliPay(params).then(res => {
@@ -416,7 +412,7 @@
             if (!phone) {
               phone = localStorage.getItem('phone');
             }
-            isPay(phone, 3).then(res => {
+            isPay(phone, 4).then(res => {
               if (res && res.status) {
                 _this.isPay = res.status
                 _this.isPayMessage = res.status ? '已支付' : '确认支付';
@@ -487,9 +483,9 @@
         let params = {
           'phone': this.phone,
           'subject': '愈见心理课',
-          'course_id': 3,
+          'course_id': 4,
           'code': code,
-          'status': this.price === 49 ? 1 : 2,
+          'status': this.price === 9.9 ? 0 : 0,
           'pay_type': pay_type
         }
         createWXPay(params).then(res => {

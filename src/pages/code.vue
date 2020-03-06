@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div class="line code">
+    <!--<div class="line code">
       添加微信号或长按保存下方二维码添加您的学习专属班
-    </div>
+    </div>-->
     <div class="box">
-      <img src="../../static/images/coder3.jpg" alt="">
+      <img src="../../static/images/touchStu.png" alt="">
     </div>
-    <div class="line">
+    <!--<div class="line">
       微信号：13141204632
-    </div>
+    </div>-->
   </div>
 </template>
 
@@ -20,7 +20,7 @@
       pushHistory()
       // 监听历史记录点, 添加返回事件监听
       window.onpopstate = () => {
-        this.$router.push("/home")  //输入要返回的上一级路由地址
+        this.$router.push("/nineNew")  //输入要返回的上一级路由地址
       }
     },
   }
@@ -28,9 +28,10 @@
 
 <style scoped>
   .box {
-    width: 60%;
+    width: 100%;
     height: auto;
-    margin: 0 auto
+    /*margin: 0 auto*/
+    margin-top: 1rem;
   }
   
   .box img {

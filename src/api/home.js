@@ -9,7 +9,7 @@ let config = {
  * 是否支付成功
  *
  * @date 2019/7/1
- * course_id:  1--->9.9 2--->8.9 3--->49
+ * course_id:  1--->9.9 2--->8.9 3--->49  4--->心理9.9
  * @author nan
  */
 export function isPay(phone, course_id) {
@@ -70,6 +70,20 @@ export function getPhoneDataDec(phone, seaName) {
   params.courseName = '愈见'
   params.buName = '信息流事业部(合作)'
   params.sourceType = '信息流事业部合作_心谕者社群军团_心理训练营_今日头条_信息流_asd_全国'
+  params.seaName = seaName
+  params.adName = "今日头条"
+  return request({
+    method: 'get',
+    url: 'https://apis.luboedu.cn/1.0/Onlinequestion/tanglang?' + qs.stringify(params)
+  })
+}
+
+export function getPhoneDataNineNew(phone, seaName) {
+  let params = []
+  params.phone = phone
+  params.courseName = '愈见'
+  params.buName = '信息流事业部(合作)'
+  params.sourceType = '信息流事业部合作_心谕者社群军团_心理训练营_今日头条_信息流_asd9new_全国'
   params.seaName = seaName
   params.adName = "今日头条"
   return request({

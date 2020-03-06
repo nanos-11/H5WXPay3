@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="page1" onclick="mantis.requestChat()">
-      <div class="banner"><img src="../../static/images/banner.jpg" alt="" width="100%"></div>
+      <div class="banner"><img src="../../static/images/bac11.png" alt="" width="100%"></div>
     </section>
     <section class="baominfon">
       8人正在拼团，可直接参团
@@ -41,13 +41,10 @@
       <div class="banner"><img src="../../static/images/bac33.png" alt="" width="100%"></div>
     </section>
     <section class="page1">
-      <div class="banner"><img src="../../static/images/bac43.jpg" alt="" width="100%"></div>
+      <div class="banner"><img src="../../static/images/bac44.jpg" alt="" width="100%"></div>
     </section>
     <section class="page1">
-      <div class="banner"><img src="../../static/images/bac5.png" alt="" width="100%"></div>
-    </section>
-    <section class="page1">
-      <div class="banner"><img src="../../static/images/bac6.jpg" alt="" width="100%"></div>
+      <div class="banner"><img src="../../static/images/bac55.png" alt="" width="100%"></div>
     </section>
     <section class="page1">
       <div class="banner"><img src="../../static/images/bac66.png" alt="" width="100%"></div>
@@ -62,11 +59,11 @@
       
       <div class="footerbox" v-else>
         <div class="buyleft" @click="intentRegister(2)">
-          <div class="fon1">¥699</div>
+          <div class="fon1">¥199</div>
           <div class="fon2">原价购买</div>
         </div>
         <div class="buyright" @click="intentRegister(1)">
-          <div class="fon1">¥49</div>
+          <div class="fon1">¥9.9</div>
           <div class="fon2">一键参团</div>
         </div>
       </div>
@@ -77,15 +74,15 @@
         <div class="closeButton" @click="closeCode">
           X
         </div>
-        <div class="top">
+        <!--<div class="top">
           添加微信号或长按保存下方二维码添加您的学习专属班
+        </div>-->
+        <div style="width: 100%;height: auto;margin: 0 auto">
+          <img  style="width: 80%; height: 80%;margin-left: 0.6rem" src="../../static/images/touchStu.png" alt="">
         </div>
-        <div class="box">
-          <img src="../../static/images/coder3.jpg" alt="">
-        </div>
-        <div class="bottom">
+        <!--<div class="bottom">
           微信号：13141204632
-        </div>
+        </div>-->
       </div>
     </section>
   
@@ -96,7 +93,7 @@
   import {isPay} from "../api/home";
   
   export default {
-    name: "Home",
+    name: "nineNew",
     data() {
       return {
         isPay: false,
@@ -127,7 +124,7 @@
     },
     created() {
       let phone = localStorage.getItem('phone');
-      isPay(phone, 3).then(res => {
+      isPay(phone, 4).then(res => {
         this.isPay = res.status
         if (res && res.status) {
           this.dialogPay = true;
@@ -177,14 +174,14 @@
           let appid = 'wx4a597f8c6a839610'
           // console.log('nan intentRegister', isiOS)
           if (isiOS) {
-            window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhoneDec?type=' + type
+            window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhoneNineNew?type=' + type
           } else {
-            let url = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhoneDec?type=' + type;
+            let url = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhoneNineNew?type=' + type;
             window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='
               + appid + '&redirect_uri=' + encodeURIComponent(url) + '&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
           }
         } else {
-          window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhoneDec?type=' + type
+          window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhoneNineNew?type=' + type
         }
       }
     }
