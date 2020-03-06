@@ -405,7 +405,7 @@
           'phone': this.phone,
           'subject': '愈见心理课',
           'course_id': 4,
-          'status': this.price === 9.9 ? 0 : 0,//3=>9.9 4=>199
+          'status': this.price === 9.9 ? 3 : 4,//3=>9.9 4=>199
           'returnURL': 'http://yujianzky.51nicelearn.com/onlinebuy/#/coder',
           'quitUrl': 'http://yujianzky.51nicelearn.com/onlinebuy/#/nineNew'
         }
@@ -492,7 +492,7 @@
           'subject': '愈见心理课',
           'course_id': 4,
           'code': code,
-          'status': this.price === 9.9 ? 0 : 0,
+          'status': this.price === 9.9 ? 3 : 4,
           'pay_type': pay_type
         }
         createWXPay(params).then(res => {
