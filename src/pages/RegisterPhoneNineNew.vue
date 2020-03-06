@@ -74,7 +74,7 @@
           添加微信号或长按保存下方二维码添加您的学习专属班
         </div>-->
         <div style="width: 100%;height: auto;margin: 0 auto">
-          <img  style="width: 80%; height: 80%;margin-left: 0.6rem" src="../../static/images/touchStu.png" alt="">
+          <img style="width: 80%; height: 80%;margin-left: 0.6rem" src="../../static/images/touchStu.png" alt="">
         </div>
         <!--<div class="bottom">
           微信号：13141204632
@@ -243,6 +243,13 @@
       isPay(phone, 4).then(res => {
         this.isPay = res.status
         this.isPayMessage = res.status ? '已支付' : '确认支付';
+        
+        let timerAliPay = window.setInterval(function () {
+          if (res && res.status) {
+            window.clearInterval(timerAliPay)
+            window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/coder'
+          }
+        }, 2000)
       })
       // 倒计时
       if (this.minutes === 10) {
@@ -399,8 +406,8 @@
           'subject': '愈见心理课',
           'course_id': 4,
           'status': this.price === 9.9 ? 0 : 0,//3=>9.9 4=>199
-          'returnURL':'http://yujianzky.51nicelearn.com/onlinebuy/#/coder',
-          'quitUrl':'http://yujianzky.51nicelearn.com/onlinebuy/#/nineNew'
+          'returnURL': 'http://yujianzky.51nicelearn.com/onlinebuy/#/coder',
+          'quitUrl': 'http://yujianzky.51nicelearn.com/onlinebuy/#/nineNew'
         }
         let _this = this;
         createAliPay(params).then(res => {
