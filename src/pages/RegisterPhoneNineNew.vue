@@ -67,10 +67,10 @@
     </div>
     <section class="openBox" v-show="dialogPay">
       <div class="codeBox">
-        <!--<div class="closeButton" @click="closeCode">
+        <div class="closeButton" @click="closeCode">
           X
         </div>
-        <div class="top">
+        <!--<div class="top">
           添加微信号或长按保存下方二维码添加您的学习专属班
         </div>-->
         <div style="width: 100%;height: auto;margin: 0 auto">
@@ -398,7 +398,7 @@
           'phone': this.phone,
           'subject': '愈见心理课',
           'course_id': 4,
-          'status': this.price === 9.9 ? 0 : 0,
+          'status': this.price === 9.9 ? 0 : 0,//3=>9.9 4=>199
           'returnURL':'http://yujianzky.51nicelearn.com/onlinebuy/#/coder',
           'quitUrl':'http://yujianzky.51nicelearn.com/onlinebuy/#/nineNew'
         }
@@ -417,7 +417,7 @@
                 _this.isPay = res.status
                 _this.isPayMessage = res.status ? '已支付' : '确认支付';
                 window.clearInterval(timerAliPay)
-                // window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/homeTest'
+                window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/coder'
               }
             })
           }, 3000)
