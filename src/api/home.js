@@ -26,14 +26,7 @@ export function isPay(phone, course_id) {
  * @date 2019/6/21
  * @author nan
  */
-export function getBindVerCode(phone) {
-  return request({
-    method: 'get',
-    url: config.baseURL + 'Marketingcourse/Nineyuan/getBindVerCode?phone=' + phone + '&course_id=4'
-  })
-}
-
-export function getBindTanglang(phone, status) {
+export function getBindVerCode(phone, status) {
   return request({
     method: 'get',
     url: config.baseURL + 'Marketingcourse/Nineyuan/getBindVerCode?phone=' + phone + '&course_id=4&status=' + status

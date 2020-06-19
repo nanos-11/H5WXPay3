@@ -92,8 +92,7 @@
     loginPhone,
     createAliPay,
     getPhoneDataNineNew,
-    createWXPay,
-    getBindTanglang
+    createWXPay
   } from "../api/home";
   
   /**
@@ -368,18 +367,23 @@
         // 验证码计时器
         timerCode.call(this)
         
-        // 获取验证码接口
-        getBindVerCode(this.phone).then(res => {
-          // console.log('nan ', res)
-          if (res.errorCode === 1005) {
-            this.message = "验证码发送频繁，请稍候再试"
-          }
-        })
         // 获取手机号给螳螂
         getPhoneDataNineNew(this.phone, this.address).then(res => {
-          getBindTanglang(this.phone, 1)
+          // 获取验证码接口
+          getBindVerCode(this.phone, 1).then(res => {
+            // console.log('nan ', res)
+            if (res.errorCode === 1005) {
+              this.message = "验证码发送频繁，请稍候再试"
+            }
+          })
         }, error => {
-          getBindTanglang(this.phone, 2)
+          // 获取验证码接口
+          getBindVerCode(this.phone, 2).then(res => {
+            // console.log('nan ', res)
+            if (res.errorCode === 1005) {
+              this.message = "验证码发送频繁，请稍候再试"
+            }
+          })
         })
         meteor.track("form", {convert_id: "1660316880834572"})
         // if (this.type === '2') {
