@@ -180,7 +180,7 @@
         timerPay: false,
         isPayMessage: '确认支付',
         merID: '1497884262',  // 商户号
-        price: 9.9,
+        price: 9,
         type: '1',
         // JSAPI 就是微信内部吊起支付 MWEB 就是微信外
         pay_type: 'JSAPI',
@@ -235,7 +235,7 @@
     created() {
       this.type = decodeURIComponent(this.$route.query.type);
       if (this.type === '2') {
-        this.price = 199
+        this.price = 299
       }
       localStorage.setItem('price', this.price);
       
@@ -290,26 +290,63 @@
        * @date 2019/7/1
        * @author nan
        */
+      /**
+       * 获取地址信息
+       */
       getAddress() {
-        let cip = window.returnCitySN.cip;
-        const KEY = 'DOFBZ-AVFE2-KVAUJ-C4GP3-V4IJ2-GPFAY'; //key 秘钥自己申请
-        let url = 'https://apis.map.qq.com/ws/location/v1/ip?ip=' + cip + '&key=' + KEY;
-        this.$jsonp(url, {
-          callbackName: 'QQmap',
-          output: 'jsonp',
-        })
-        .then(json => {
-          // adcode: 110105
-          // city: "北京市"
-          // district: "朝阳区"
-          // nation: "中国"
-          // province: "北京市"
-          this.address = json.result.ad_info.city;
-        })
-        .catch(err => {
-          console.log(err)
-        })
+        $.ajax({
+          type: "get",
+          url: "https://user.luboedu.cn/athena/oc/rest/getIP",
+          success: function (data, textStatus) {
+            console.log("nan-->", data.data)
+            let cip = data.data;
+            const KEY = 'DOFBZ-AVFE2-KVAUJ-C4GP3-V4IJ2-GPFAY'; //key 秘钥自己申请
+            let url = 'https://apis.map.qq.com/ws/location/v1/ip?ip=' + cip + '&key=' + KEY;
+            $.ajax({
+              dataType: "jsonp",
+              url: url,
+              "data": {
+                callbackName: 'QQmap',
+                output: 'jsonp',
+              },
+              "success": function (userProfile) {
+                console.log(userProfile.result.ad_info.city)
+                this.address = userProfile.result.ad_info.city
+              },
+              "error": function (d, msg) {
+                console.log(d, msg)
+              }
+            })
+          },
+          complete: function (XMLHttpRequest, textStatus) {
+            // console.log("complete");
+          },
+          error: function () {
+            // console.log("error");
+            //请求出错处理
+          }
+        });
       },
+      // getAddress() {
+      //   let cip = window.returnCitySN.cip;
+      //   const KEY = 'DOFBZ-AVFE2-KVAUJ-C4GP3-V4IJ2-GPFAY'; //key 秘钥自己申请
+      //   let url = 'https://apis.map.qq.com/ws/location/v1/ip?ip=' + cip + '&key=' + KEY;
+      //   this.$jsonp(url, {
+      //     callbackName: 'QQmap',
+      //     output: 'jsonp',
+      //   })
+      //   .then(json => {
+      //     // adcode: 110105
+      //     // city: "北京市"
+      //     // district: "朝阳区"
+      //     // nation: "中国"
+      //     // province: "北京市"
+      //     this.address = json.result.ad_info.city;
+      //   })
+      //   .catch(err => {
+      //     console.log(err)
+      //   })
+      // },
       /**
        * 获取验证码
        *
@@ -405,7 +442,7 @@
           'phone': this.phone,
           'subject': '愈见心理课',
           'course_id': 4,
-          'status': this.price === 9.9 ? 0 : 0,//3=>9.9 4=>199
+          'status': this.price === 9 ? 3 : 4,//3=>9 4=>299
           'returnURL': 'http://yujianzky.51nicelearn.com/onlinebuy/#/coder',
           'quitUrl': 'http://yujianzky.51nicelearn.com/onlinebuy/#/nineNew'
         }
@@ -492,7 +529,7 @@
           'subject': '愈见心理课',
           'course_id': 4,
           'code': code,
-          'status': this.price === 9.9 ? 0 : 0,
+          'status': this.price === 9 ? 3 : 4,
           'pay_type': pay_type
         }
         createWXPay(params).then(res => {

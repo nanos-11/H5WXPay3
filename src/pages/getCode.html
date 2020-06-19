@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>获取验证码例子</title>
+  <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.js"></script>
+  <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+
+</head>
+<body>
+
+<form>
+  手机号:
+  <input type="text" name="phone" id="phone"/>
+  <br/>
+  验证码:
+  <input type="text" id="clock"/>
+</form>
+
+<button id="btnCode">发送手机验证码</button>
+
+<script type="text/javascript">
+  //界面一进来请求的数据
+  $(document).ready(function () {
+    getAddress();
+  })
+  
+  var timeClock;
+  var address;
+  
+  //点击获取验证码按钮
+  $("#btnCode").click(function () {
+    // 判断手机号的
+    if (!verifyPhone.call(this)) return
+    
+    // 判断年龄
+    
+    $("#btnCode").attr("disabled", "true");
+    sendCode();  // step1:倒计时
+    requestGetCode(); //step2:走接口发送验证码
+    getPhoneDataNineNew(); //step3:发送数据给螳螂
+  });
+  
+  /**
+   * step1:倒计时
+   */
+  function sendCode() {
+    var timer_num = 60;
+    timeClock = setInterval(function () {
+      timer_num--;
+      $("#btnCode").html(timer_num + "s");
+      if (timer_num == 0) {
+        clearInterval(timeClock);
+        $('#btnCode').html("重新获取");
+        $("#btnCode").removeAttr("disabled")
+      }
+    }, 1000)
+  }
+  
+  /**
+   * step2: 走接口发送验证码
+   */
+  function requestGetCode() {
+    let phone = $(" input[ name='phone' ] ").val();
+    $.ajax({
+      type: "get",
+      url: "https://apis.luboedu.cn/Marketingcourse/Nineyuan/getBindVerCode?phone=" + phone + "course_id=5",
+      success: function (data, textStatus) {
+        console.log("nan-->", data)
+        console.log("nan-->", textStatus)
+        
+        if (data.errorCode === 1005) {
+          alert("验证码发送频繁，请稍候再试");
+        }
+      },
+      complete: function (XMLHttpRequest, textStatus) {
+        // console.log("complete");
+      },
+      error: function () {
+        // console.log("error");
+        //请求出错处理
+      }
+    });
+  }
+  
+  /**
+   * step3:发送数据给螳螂
+   */
+  function getPhoneDataNineNew() {
+    let phone = $("#phone1").val();
+    
+    let params = []
+    params.phone = phone
+    params.courseName = '愈见'
+    params.buName = '信息流事业部(合作)'
+    params.sourceType = '信息流事业部合作_心谕者社群军团_心理训练营_今日头条_信息流_asd9new_全国'
+    params.seaName = address   //地域
+    params.adName = "今日头条"
+    
+    $.ajax({
+      type: "get",
+      url: "https://apis.luboedu.cn/1.0/Onlinequestion/tanglang?" + urlEncode(params),
+      success: function (data, textStatus) {
+        console.log("nan-->", data)
+        console.log("nan-->", textStatus)
+      },
+      complete: function (XMLHttpRequest, textStatus) {
+        // console.log("complete");
+      },
+      error: function () {
+        // console.log("error");
+        //请求出错处理
+      }
+    });
+  }
+  
+  /**
+   * url地址转换
+   */
+  var urlEncode = function (param, key, encode) {
+    if (param == null) return '';
+    var paramStr = '';
+    var t = typeof (param);
+    if (t == 'string' || t == 'number' || t == 'boolean') {
+      paramStr += '&' + key + '=' + ((encode == null || encode) ? encodeURIComponent(param) : param);
+    } else {
+      for (var i in param) {
+        var k = key == null ? i : key + (param instanceof Array ? '[' + i + ']' : '.' + i);
+        paramStr += urlEncode(param[i], k, encode);
+      }
+    }
+    return paramStr;
+  };
+  
+  /**
+   * 获取地址信息
+   */
+  function getAddress() {
+    $.ajax({
+      type: "get",
+      url: "https://user.luboedu.cn/athena/oc/rest/getIP",
+      success: function (data, textStatus) {
+        console.log("nan-->", data.data)
+        let cip = data.data;
+        const KEY = 'DOFBZ-AVFE2-KVAUJ-C4GP3-V4IJ2-GPFAY'; //key 秘钥自己申请
+        let url = 'https://apis.map.qq.com/ws/location/v1/ip?ip=' + cip + '&key=' + KEY;
+        $.ajax({
+          dataType: "jsonp",
+          url: url,
+          "data": {
+            callbackName: 'QQmap',
+            output: 'jsonp',
+          },
+          "success": function (userProfile) {
+            console.log(userProfile.result.ad_info.city)
+            address = userProfile.result.ad_info.city
+          },
+          "error": function (d, msg) {
+            console.log(d, msg)
+          }
+        })
+      },
+      complete: function (XMLHttpRequest, textStatus) {
+        // console.log("complete");
+      },
+      error: function () {
+        // console.log("error");
+        //请求出错处理
+      }
+    });
+  }
+  
+  /**
+   * 验证手机号是否正确
+   */
+  function verifyPhone() {
+    let Phone1 = $("#phone1").val();
+    if (Phone1 === '') {
+      let message = "请输入手机号";
+      alert(message);
+      return false
+    }
+    let pattern = /^1[23456789]\d{9}$/;
+    if (pattern.test(Phone1) !== true) {
+      let message = "请输入正确的手机号";
+      alert(message);
+      return false
+    }
+    return true
+  }
+</script>
+</body>
+</html>

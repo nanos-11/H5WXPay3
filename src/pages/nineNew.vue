@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="page1" onclick="mantis.requestChat()">
-      <div class="banner"><img src="../../static/images/bac11.png" alt="" width="100%"></div>
+      <div class="banner"><img src="../../static/images/bac111.jpg" alt="" width="100%"></div>
     </section>
     <section class="baominfon">
       8人正在拼团，可直接参团
@@ -59,11 +59,11 @@
       
       <div class="footerbox" v-else>
         <div class="buyleft" @click="intentRegister(2)">
-          <div class="fon1">¥199</div>
-          <div class="fon2">原价购买</div>
+          <div class="fon1">¥299</div>
+          <div class="fon2">单价购买</div>
         </div>
         <div class="buyright" @click="intentRegister(1)">
-          <div class="fon1">¥9.9</div>
+          <div class="fon1">¥9</div>
           <div class="fon2">一键参团</div>
         </div>
       </div>
@@ -78,7 +78,7 @@
           添加微信号或长按保存下方二维码添加您的学习专属班
         </div>-->
         <div style="width: 100%;height: auto;margin: 0 auto">
-          <img  style="width: 80%; height: 80%;margin-left: 0.6rem" src="../../static/images/touchStu.png" alt="">
+          <img style="width: 80%; height: 80%;margin-left: 0.6rem" src="../../static/images/touchStu.png" alt="">
         </div>
         <!--<div class="bottom">
           微信号：13141204632
