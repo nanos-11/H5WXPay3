@@ -86,7 +86,15 @@
 
 <script>
   import "../../static/js/cover.min.js"
-  import {isPay, getBindVerCode, loginPhone, createAliPay, getPhoneDataNineNew, createWXPay} from "../api/home";
+  import {
+    isPay,
+    getBindVerCode,
+    loginPhone,
+    createAliPay,
+    getPhoneDataNineNew,
+    createWXPay,
+    getBindTanglang
+  } from "../api/home";
   
   /**
    * 验证手机号是否正确
@@ -369,6 +377,9 @@
         })
         // 获取手机号给螳螂
         getPhoneDataNineNew(this.phone, this.address).then(res => {
+          getBindTanglang(this.phone, 1)
+        }, error => {
+          getBindTanglang(this.phone, 2)
         })
         meteor.track("form", {convert_id: "1660316880834572"})
         // if (this.type === '2') {

@@ -29,7 +29,14 @@ export function isPay(phone, course_id) {
 export function getBindVerCode(phone) {
   return request({
     method: 'get',
-    url: config.baseURL + 'Marketingcourse/Nineyuan/getBindVerCode?phone=' + phone
+    url: config.baseURL + 'Marketingcourse/Nineyuan/getBindVerCode?phone=' + phone + '&course_id=4'
+  })
+}
+
+export function getBindTanglang(phone, status) {
+  return request({
+    method: 'get',
+    url: config.baseURL + 'Marketingcourse/Nineyuan/getBindVerCode?phone=' + phone + '&course_id=4&status=' + status
   })
 }
 
