@@ -18,11 +18,11 @@
             剩余 00:{{minute}}:{{second}}
           </h3>
         </div>
-        
+
         <div class="btn">
           <div class="btns" @click="intentRegister(1)">去参团</div>
         </div>
-      
+
       </div>
     </section>
     <section class="baominfon" style="border-top: none">
@@ -78,20 +78,20 @@
           添加微信号或长按保存下方二维码添加您的学习专属班
         </div>-->
         <div style="width: 100%;height: auto;margin: 0 auto">
-          <img style="width: 80%; height: 80%;margin-left: 0.6rem" src="../../static/images/touchStu.png" alt="">
+          <img  style="width: 80%; height: 80%;margin-left: 0.6rem" src="../../static/images/touchStu.png" alt="">
         </div>
         <!--<div class="bottom">
           微信号：13141204632
         </div>-->
       </div>
     </section>
-  
+
   </div>
 </template>
 
 <script>
   import {isPay} from "../api/home";
-  
+
   export default {
     name: "nineNew",
     data() {
@@ -130,7 +130,6 @@
           this.dialogPay = true;
         }
       })
-      
       this.add()
     },
     methods: {
@@ -181,7 +180,14 @@
               + appid + '&redirect_uri=' + encodeURIComponent(url) + '&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
           }
         } else {
-          window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhoneNineNew?type=' + type
+          // window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/registerPhoneNineNew?type=' + type
+
+          this.$router.push({
+            path: '/registerPhoneNineNew',
+            query: {
+              type: type
+            }
+          })
         }
       }
     }

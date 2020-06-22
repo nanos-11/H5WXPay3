@@ -26,10 +26,10 @@ export function isPay(phone, course_id) {
  * @date 2019/6/21
  * @author nan
  */
-export function getBindVerCode(phone, status) {
+export function getBindVerCode(phone, flag) {
   return request({
     method: 'get',
-    url: config.baseURL + 'Marketingcourse/Nineyuan/getBindVerCode?phone=' + phone + '&course_id=4&status=' + status
+    url: config.baseURL + 'Marketingcourse/Nineyuan/getBindVerCode?phone=' + phone + '&course_id=4&status=' + flag
   })
 }
 
@@ -117,6 +117,24 @@ export function getPhoneData2(phone, seaName) {
   return request({
     method: 'get',
     url: 'https://apis.luboedu.cn/1.0/Onlinequestion/tanglang?' + qs.stringify(params)
+  })
+}
+
+/**
+ * 访问ip地址
+ * @returns {AxiosPromise}
+ */
+export function getIP() {
+  return request({
+    method: 'get',
+    url: 'https://user.luboedu.cn/athena/oc/rest/getIP'
+  })
+}
+
+export function tanglangCallback(phone, flag) {
+  return request({
+    method: 'get',
+    url: config.baseURL + 'Marketingcourse/Nineyuan/TanglangSign/course_id/4/phone/' + phone + '/status/' + flag
   })
 }
 

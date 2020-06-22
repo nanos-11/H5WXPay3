@@ -90,8 +90,8 @@
 
 <script>
   import "../../static/js/cover.min.js"
-  import {isPay, getBindVerCode, loginPhone, createAliPay, getPhoneDataDec, createWXPay} from "../api/home";
-  
+  import {isPay, getBindVerCode, loginPhone, createAliPay, getPhoneDataDec, createWXPay, getIP} from "../api/home";
+
   /**
    * 验证手机号是否正确
    *
@@ -237,6 +237,7 @@
      * @author nan
      */
     created() {
+      let _this = this;
       this.type = decodeURIComponent(this.$route.query.type);
       if (this.type === '2') {
         this.price = 699
@@ -254,7 +255,12 @@
           this.add()
         }
       }
-      this.getAddress()
+      getIP().then(res =>{
+        if(res){
+          const cip = res.data;
+          _this.getAddress(cip)
+        }
+      })
     },
     methods: {
       is_weixin() {
@@ -328,6 +334,9 @@
           }
         })
         // 获取手机号给螳螂
+        if(!this.address){
+          this.address = '北京'
+        }
         getPhoneDataDec(this.phone, this.address).then(res => {
         })
         meteor.track("form", {convert_id: "1653075513113613"})

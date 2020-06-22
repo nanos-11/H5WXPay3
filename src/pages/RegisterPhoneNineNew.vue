@@ -36,7 +36,7 @@
       <div class="gap"></div>
       <div class="course-info">
         <div class="extra">
-          <img src="../../static/images/hint1.jpg" alt="" width="100%">
+          <img src="../../static/images/hint1.png" alt="" width="100%">
         </div>
         <div class="course-title">支付方式</div>
         <!--        -->
@@ -92,9 +92,10 @@
     loginPhone,
     createAliPay,
     getPhoneDataNineNew,
-    createWXPay
+    createWXPay,
+    getIP
   } from "../api/home";
-  
+
   /**
    * 验证手机号是否正确
    *
@@ -115,7 +116,7 @@
     }
     return true
   }
-  
+
   /**
    * 验证验证码是否正确
    *
@@ -130,7 +131,7 @@
     }
     return true
   }
-  
+
   /**
    * 倒计时60秒
    *
@@ -156,7 +157,7 @@
       }, 1000)
     }
   }
-  
+
   export default {
     name: "RegisterPhoneNineNew",
     data() {
@@ -165,7 +166,7 @@
         wxCode: '',
         minutes: 10,
         seconds: 0,
-        address: '',//地址
+        address: 'null',//地址
         message: '',  //提示信息
         codeMessage: '',
         isShow: '',  //是否显示提示信息
@@ -240,9 +241,13 @@
      * @author nan
      */
     created() {
-      this.type = decodeURIComponent(this.$route.query.type);
-      if (this.type === '2') {
+      let _this = this;
+      // this.type = decodeURIComponent(this.$route.query.type);
+      this.type = this.$route.query.type;
+      if (this.type === 2) {
         this.price = 299
+      } else {
+        this.price = 9
       }
       localStorage.setItem('price', this.price);
       
@@ -250,11 +255,12 @@
       isPay(phone, 4).then(res => {
         this.isPay = res.status
         this.isPayMessage = res.status ? '已支付' : '确认支付';
-        
-        let t = window.setInterval(function () {
+
+        let timerAliPay = window.setInterval(function () {
           if (res && res.status) {
-            window.clearInterval(t)
-            window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/coder'
+            window.clearInterval(timerAliPay)
+            // window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/coder'
+            _this.$router.push("/coder")
           }
         }, 2000)
       })
@@ -264,7 +270,12 @@
           this.add()
         }
       }
-      this.getAddress()
+      getIP().then(res => {
+        if (res) {
+          const cip = res.data;
+          _this.getAddress(cip)
+        }
+      })
     },
     methods: {
       is_weixin() {
@@ -297,63 +308,25 @@
        * @date 2019/7/1
        * @author nan
        */
-      /**
-       * 获取地址信息
-       */
-      getAddress() {
-        $.ajax({
-          type: "get",
-          url: "https://user.luboedu.cn/athena/oc/rest/getIP",
-          success: function (data, textStatus) {
-            console.log("nan-->", data.data)
-            let cip = data.data;
-            const KEY = 'DOFBZ-AVFE2-KVAUJ-C4GP3-V4IJ2-GPFAY'; //key 秘钥自己申请
-            let url = 'https://apis.map.qq.com/ws/location/v1/ip?ip=' + cip + '&key=' + KEY;
-            $.ajax({
-              dataType: "jsonp",
-              url: url,
-              "data": {
-                callbackName: 'QQmap',
-                output: 'jsonp',
-              },
-              "success": function (userProfile) {
-                console.log(userProfile.result.ad_info.city)
-                this.address = userProfile.result.ad_info.city
-              },
-              "error": function (d, msg) {
-                console.log(d, msg)
-              }
-            })
-          },
-          complete: function (XMLHttpRequest, textStatus) {
-            // console.log("complete");
-          },
-          error: function () {
-            // console.log("error");
-            //请求出错处理
-          }
-        });
+      getAddress(cip) {
+        const KEY = 'DOFBZ-AVFE2-KVAUJ-C4GP3-V4IJ2-GPFAY'; //key 秘钥自己申请
+        let url = 'https://apis.map.qq.com/ws/location/v1/ip?ip=' + cip + '&key=' + KEY;
+        this.$jsonp(url, {
+          callbackName: 'QQmap',
+          output: 'jsonp',
+        })
+          .then(json => {
+            // adcode: 110105
+            // city: "北京市"
+            // district: "朝阳区"
+            // nation: "中国"
+            // province: "北京市"
+            this.address = json.result.ad_info.city;
+          })
+          .catch(err => {
+            console.log(err)
+          })
       },
-      // getAddress() {
-      //   let cip = window.returnCitySN.cip;
-      //   const KEY = 'DOFBZ-AVFE2-KVAUJ-C4GP3-V4IJ2-GPFAY'; //key 秘钥自己申请
-      //   let url = 'https://apis.map.qq.com/ws/location/v1/ip?ip=' + cip + '&key=' + KEY;
-      //   this.$jsonp(url, {
-      //     callbackName: 'QQmap',
-      //     output: 'jsonp',
-      //   })
-      //   .then(json => {
-      //     // adcode: 110105
-      //     // city: "北京市"
-      //     // district: "朝阳区"
-      //     // nation: "中国"
-      //     // province: "北京市"
-      //     this.address = json.result.ad_info.city;
-      //   })
-      //   .catch(err => {
-      //     console.log(err)
-      //   })
-      // },
       /**
        * 获取验证码
        *
@@ -366,26 +339,34 @@
         if (!verifyPhone.call(this)) return
         // 验证码计时器
         timerCode.call(this)
-        
+
+
         // 获取手机号给螳螂
+        if (this.address === 'null' || this.address === null || this.address === '') {
+          this.address = 'null'
+          let cName = localStorage.getItem('cityname')
+          if(cName !== null && cName !== '' && cName !== undefined && this.address !== 'null'){
+            this.address = cName
+          }
+        }
         getPhoneDataNineNew(this.phone, this.address).then(res => {
-          // 获取验证码接口
-          getBindVerCode(this.phone, 1).then(res => {
-            // console.log('nan ', res)
-            if (res.errorCode === 1005) {
-              this.message = "验证码发送频繁，请稍候再试"
+          let flag = 2
+          if (res) {
+            if (res.result.flag === 1) {
+              flag = 1
+            } else {
+              flag = 2
             }
-          })
-        }, error => {
+          }
           // 获取验证码接口
-          getBindVerCode(this.phone, 2).then(res => {
+          getBindVerCode(this.phone, flag).then(res => {
             // console.log('nan ', res)
             if (res.errorCode === 1005) {
               this.message = "验证码发送频繁，请稍候再试"
             }
           })
         })
-        meteor.track("form", {convert_id: "1660316880834572"})
+        meteor.track('form', {convert_id: "1660316880834572"})
         // if (this.type === '2') {
         //   meteor.track('form', {convert_id: 1651889116605448})
         // } else {
@@ -476,7 +457,7 @@
                 _this.isPay = res.status
                 _this.isPayMessage = res.status ? '已支付' : '确认支付';
                 window.clearInterval(timerAliPay)
-                // window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/coder'
+                window.location.href = 'http://yujianzky.51nicelearn.com/onlinebuy/#/coder'
               }
             })
           }, 3000)
@@ -489,8 +470,6 @@
           window.alert("支付失败")
         })
       },
-      
-      
       /**
        * 微信支付
        *

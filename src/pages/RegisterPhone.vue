@@ -292,7 +292,7 @@
        * @author nan
        */
       getAddress() {
-        let cip = window.returnCitySN.cip;
+        let cip = localStorage.getItem('Ip');
         const KEY = 'DOFBZ-AVFE2-KVAUJ-C4GP3-V4IJ2-GPFAY'; //key 秘钥自己申请
         let url = 'https://apis.map.qq.com/ws/location/v1/ip?ip=' + cip + '&key=' + KEY;
         this.$jsonp(url, {
@@ -332,6 +332,9 @@
           }
         })
         // 获取手机号给螳螂
+        if(!this.address){
+          this.address = 'null'
+        }
         getPhoneData(this.phone, this.address).then(res => {
         })
         
